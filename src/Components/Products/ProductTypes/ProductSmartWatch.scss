@@ -1,0 +1,36 @@
+.productSmartWatch_wrap {
+    margin-left: 4.6rem;
+}
+
+.productSmartWatch_name {
+    font-size: 3rem;
+    margin: 3rem 0 3rem 0;
+    text-align: center;
+    position: relative;
+}
+.productSmartWatch_name::after {
+    content: "";
+    position: absolute;
+    width: 99px;
+    height: 3px;
+    background-color: var(--hover-color);
+    top: 4.8rem;
+    right: 55rem;
+}
+
+.productSmartWatch_type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+        font-size: 1.8rem;
+        margin: 0 3rem 2rem 3rem;
+        font-weight: 400;
+        border:none;
+        background-color: #fff;
+        cursor: pointer;
+        
+    }
+    button:hover {color:var(--hover-color);}
+}

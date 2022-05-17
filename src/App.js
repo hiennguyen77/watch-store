@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { Fragment } from "react";
+import { Routes, Route } from "react-router-dom";
+import LayoutHome from "./Components/Layout/LayoutHome/LayoutHome";
+import { publicRoutes } from "./Routes/index";
+import { message } from 'antd';
 
 function App() {
+ 
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        {publicRoutes.map((route, index) => {
+          const Page = route.component;
+          let Layout = LayoutHome;
+          if (route.layout) {
+            Layout = route.layout;
+          } else if (route.layout === null) {
+            Layout = Fragment;
+          }
+          return (
+            <Route
+              key={index}
+              path={route.path}
+              element={
+                <Layout>
+                  
+                    
+                  <Page/>
+                    
+                </Layout>
+              }
+            />
+          );
+        })}
+      </Routes>
     </div>
   );
 }

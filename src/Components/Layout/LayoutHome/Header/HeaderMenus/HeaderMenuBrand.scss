@@ -1,0 +1,114 @@
+.menuBrand_wrap.menuBrandDefault {
+  position: absolute;
+  top: 4rem;
+  left: -9rem;
+  width: 17rem;
+  background-color: var(--white-color);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  animation: menuBrandAnimation1;
+  animation-duration: 0.5s;
+  transition: ease;
+
+
+
+  .menuBrand_container {
+    height: auto;
+  }
+  
+  .menuBrand_list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  .menuBrand_item.borderBrand_top {
+    border-top: 5px solid #d60f0f;
+  }
+  .menuBrand_item {
+    padding: 1rem 0rem 1rem 1rem;
+    border-top: 1px solid #dfdfdf;
+    .menuBrand_link {
+      text-decoration: none;
+      h6 {
+        color: var(--primary);
+        font-size: 1.4rem;
+        font-weight: 300;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .menuBrand_item:hover {
+    background-color: #f2f2fa;
+  }
+  
+}
+@keyframes menuBrandAnimation1 {
+  from {
+    top: 3rem;
+    opacity: 0.8;
+  }
+  to {
+    top: 4rem;
+    opacity: 1;
+  }
+}
+
+
+//---------------------------
+
+.menuBrand_wrap.menuBrandScroll {
+  position: absolute;
+  top: 3rem;
+  left: -9rem;
+  width: 17rem;
+  background-color: var(--white-color);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  animation: menuBrandAnimation;
+  animation-duration: 0.5s;
+  transition: ease;
+
+
+
+  .menuBrand_container {
+    height: auto;
+  }
+  
+  .menuBrand_list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  .menuBrand_item.borderBrand_top {
+    border-top: 5px solid #d60f0f;
+  }
+  .menuBrand_item {
+    padding: 1rem 0rem 1rem 1rem;
+    border-top: 1px solid #dfdfdf;
+    .menuBrand_link {
+      text-decoration: none;
+      h6 {
+        color: var(--primary);
+        font-size: 1.4rem;
+        font-weight: 300;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .menuBrand_item:hover {
+    background-color: #f2f2fa;
+  }
+  
+}
+
+
+
+
+@keyframes menuBrandAnimation {
+  from {
+    top: 2rem;
+    opacity: 0.8;
+  }
+  to {
+    top: 3rem;
+    opacity: 1;
+  }
+}

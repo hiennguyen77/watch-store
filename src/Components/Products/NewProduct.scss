@@ -1,0 +1,19 @@
+.new_product_body {
+    margin-left: 3rem;
+}
+
+.heading_name {
+    font-size: 3rem;
+    margin: 3rem 0 2rem 0;
+    text-align: center;
+    position: relative;
+}
+.heading_name::after {
+    content: "";
+    position: absolute;
+    width: 99px;
+    height: 3px;
+    background-color: var(--hover-color);
+    top: 4.8rem;
+    right: 55rem;
+}
