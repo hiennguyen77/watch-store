@@ -1,6 +1,9 @@
 import './HotProduct.scss';
-import {HotProductCard} from './ProductCards/ProductCard';
-export function HotProduct() {
+import {ProductCard} from './ProductCards/ProductCard'
+export function HotProduct(props) {
+    const {products} = props;
+    const hotProducts = products.slice(4, 8);
+
     return (
         <>
             <div className="HotProduct_wrap">
@@ -14,19 +17,18 @@ export function HotProduct() {
                 </div>
                 <div className='HotProduct_container grid wide'>
                     <div className='HotProduct_item row'>
-                        <div className='col l-3 m-4 c-12 '>
-                            <HotProductCard/>
-                        </div>
-                        <div className='col l-3 m-4 c-12 '>
-                            <HotProductCard/>
-                        </div>
-                        <div className='col l-3 m-4 c-12 '>
-                            <HotProductCard/>
-                        </div>
-                        <div className='col l-3 m-4 c-12 '>
-                            <HotProductCard/>
+                        {hotProducts.map((hotProduct, index)=>
+                        
+                        <div className='col l-3 m-4 c-12 ' key={index}>
+                            <ProductCard 
+                                name={hotProduct.name}
+                                URL ={hotProduct.URL}
+                                price ={hotProduct.price}
+                                salePrice ={hotProduct.salePrice}
+                            />
                         </div>
                         
+                        )}
                         
                     </div>
                 </div>

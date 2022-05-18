@@ -1,8 +1,29 @@
 import "./productForWomen.scss";
-import { ProductForWomenCard } from "../ProductCards/ProductCard";
+import {ProductCard} from '../ProductCards/ProductCard';
+
 import { Link } from "react-router-dom";
+import {useState, useEffect} from 'react'
+import axios from 'axios';
 
 export function ProductForWomen() {
+
+  const [productForWomens, setProductForWomens] = useState([])
+  useEffect(()=> {
+      const getProductForWomen =async()=>{
+          try {
+              const res = await axios.get(
+                  'https://6273e9663d2b5100742474a5.mockapi.io/productWomens'
+              )
+              setProductForWomens(res.data)
+              
+          } catch (error) {
+              console.log(error.message)
+          }
+      }
+      getProductForWomen()
+  },[])
+
+
   return (
     <>
       <div className="productForWomen_wrap">
@@ -27,21 +48,18 @@ export function ProductForWomen() {
           </div>
 
           <div className="row productForWomen_row">
-            <div className="col l-3 m-4 c-12 ">
-              <ProductForWomenCard />
+            {productForWomens.map((productForWomen, index)=>
+            
+            <div className="col l-3 m-4 c-12 " key={index}>
+              <ProductCard
+                name={productForWomen.name}
+                URL ={productForWomen.URL}
+                price ={productForWomen.price}
+                salePrice ={productForWomen.salePrice}
+              />
             </div>
-            <div className="col l-3 m-4 c-12 ">
-              <ProductForWomenCard />
-            </div>
-            <div className="col l-3 m-4 c-12 ">
-              <ProductForWomenCard />
-            </div>
-            <div className="col l-3 m-4 c-12 ">
-              <ProductForWomenCard />
-            </div>
-            <div className="col l-3 m-4 c-12 ">
-              <ProductForWomenCard />
-            </div>
+           
+            )}
           </div>
         </div>
       </div>

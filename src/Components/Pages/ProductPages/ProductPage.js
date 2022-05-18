@@ -1,45 +1,40 @@
-import { useState,useEffect} from 'react'
-import axios from 'axios';
+
 import '../../../Grid/Grid.css'
 import './ProductPage.scss';
-import {ProductForMenCard,
-        ProductForWomenCard,
-         SmartWatchCard
-    } from '../../Products/ProductCards/ProductCard'
+import { ProductCard } from '../../Products/ProductCards/ProductCard';
 import {FilterBrand} from './SideBar/Filters/FilterBrand';  
 import {FilterPrice} from './SideBar/Filters/FilterPrice';  
-import { message } from 'antd';
+import axios from 'axios';
+import { useState, useEffect} from 'react'
+
+
 
     
 
 function ProductPage(props) {
-   
-    const [products, setProduct] = useState()
+//    const {products}= props;
+ 
+   const [products, setProducts] = useState([])
+
+   useEffect(()=> {
+     const getProduct = async ()=> {
+       try {
+         const res = await axios.get(
+           'https://6273e9663d2b5100742474a5.mockapi.io/products'
+         )
+         setProducts(res.data)
+        
+       } catch (error) {
+         console.log(error.message)
+       }
+     }
+     getProduct()
+   }, [])
 
     
-
-    // useEffect(() => {
-    //     const getProduct = async()=>{
-    //           try {
-    //               const res = await axios.get(
-    //                   `https://6273e9663d2b5100742474a5.mockapi.io/brands/${brands.id}/products`
-    //               )
-    //             //   console.log(res.data)
-    //           } catch (error) {
-    //               console.log(message.error)
-    //           }  
-    //     }
-    //     getProduct()
-    // }, [])
     return (
         <>
             <div className='productPage_wrap'>
-             <div className='productPage_breadCrum'>
-                
-
-                
-                
-             </div>
                 <div className></div>
                     <div className='productPage_heading'>
                         <h1 className='productPage_heading_content'>
@@ -56,31 +51,29 @@ function ProductPage(props) {
                 <div className='productPage_container grid wide'>
                     <div className='productPage_body row no-gutters'>
                         <div className='col l-2'>
-                            <FilterBrand/>
+                           
+                            <FilterBrand />
+                           
                             <FilterPrice/>
                         </div>
                         <div className='col l-10'>
                             <div className='productPage_product row no-gutters'>
-                                <div className='col l-3 m-3 c-12'>
-                                   <ProductForMenCard/>
+                                
+                                {products.map((product, index)=>
+                                
+                                <div  className='col l-3 m-3 c-12' key={index} >
+                                   <ProductCard 
+                                   name={product.name}
+                                   URL ={product.URL}
+                                   price={product.price}
+                                   salePrice={product.salePrice}
+                                   
+                                   />
                                     
                                 </div>
-                                <div className='col l-3 m-3 c-12'>
-                                   <ProductForWomenCard/>
-                                    
-                                </div>
-                                <div className='col l-3 m-3 c-12'>
-                                   <SmartWatchCard/>
-                                    
-                                </div>
-                                <div className='col l-3 m-3 c-12'>
-                                   <SmartWatchCard/>
-                                    
-                                </div>
-                                <div className='col l-3 m-3 c-12'>
-                                   <SmartWatchCard/>
-                                    
-                                </div>
+                                )}
+                                
+                                
                                 
                             </div>
                         </div>

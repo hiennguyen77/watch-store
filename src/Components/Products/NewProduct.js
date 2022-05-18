@@ -2,8 +2,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import './NewProduct.scss';
-import { NewProductCard } from './ProductCards/ProductCard';
-export function NewProduct() {
+import {ProductCard} from './ProductCards/ProductCard'
+export function NewProduct(props) {
+const {products} = props;
+    const newProducts = products.slice(0, 4);
+    
+    
+
+
 
     var settings = {
         dots: false,
@@ -29,15 +35,17 @@ export function NewProduct() {
                     <div className="new_product_body col l-12 m-12 c-0">
                         <div className='new_product_item'>
                         <Slider {...settings}>
-                             <NewProductCard/>
-                             <NewProductCard/>
-                             <NewProductCard/>
-                             <NewProductCard/>
-                             <NewProductCard/>
-                             <NewProductCard/>
-                             <NewProductCard/>
-                             <NewProductCard/>
-                             <NewProductCard/>
+                            {newProducts.map((newProduct, index)=>
+                            
+                             <ProductCard key={index} 
+                             name={newProduct.name}
+                             URL={newProduct.URL}
+                             price={newProduct.price}
+                             salePrice={newProduct.salePrice}
+                             
+                             />
+                            )}
+                            
                         </Slider>   
                         </div>
                     </div>
