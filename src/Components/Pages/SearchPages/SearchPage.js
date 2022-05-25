@@ -1,23 +1,25 @@
-import {FiSearch} from 'react-icons/fi'
-
+import { FiSearch } from "react-icons/fi";
+import ProductPage from "../ProductPages/ProductPage";
 
 import "./SearchPage.scss";
 
-
-
-
-
-export const SearchPage = () => {
+export const SearchPage = (props) => {
+  const { products } = props;
   return (
     <>
       <div className="searchPage_wrap">
-        <div className='inputSearch_container'>
-            <input className='inputSearch' type='text' placeholder="Tìm kiếm..."/>
-            <i className='searchPage_icon'>
-                <FiSearch/>
-            </i>
+        <div className="inputSearch_container">
+          <input
+            className="inputSearch"
+            type="text"
+            placeholder="Tìm kiếm..."
+          />
+          <i className="searchPage_icon">
+            <FiSearch />
+          </i>
         </div>
       </div>
+      <ProductPage products={products} />
     </>
   );
 };

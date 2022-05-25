@@ -5,12 +5,12 @@ import { NewProduct } from "../../Products/NewProduct";
 import { HotProduct } from "../../Products/HotProduct";
 import { ProductForMen } from "../../Products/ProductTypes/ProductForMen";
 import { ProductForWomen } from "../../Products/ProductTypes/productForWomen";
-import { ProductSmartWatch } from "../../Products/ProductTypes/ProductSmartWatch";
+// import { ProductSmartWatch } from "../../Products/ProductTypes/ProductSmartWatch";
 import ProductAccessories from "../../Products/ProductTypes/ProductAccessories";
 import { Carousels } from "./Components/Carousel";
 import { BlogComponent } from "../HomePages/Components/Blog.comp";
 function HomePage(props) {
-  // const { products } = props;
+  const { products } = props;
 
   return (
     <>
@@ -19,13 +19,13 @@ function HomePage(props) {
           <Carousels className="carousel" />
         </div>
         <div className="home_page_container grid wide">
-          {/* <NewProduct products={products} /> */}
-          {/* <HotProduct products={products} /> */}
-          <ProductForMen  />
-          <ProductForWomen  />
-          <ProductSmartWatch  />
+          <NewProduct products={products} />
+          <HotProduct products={products} />
+          <ProductForMen />
+          <ProductForWomen />
+          {/* <ProductSmartWatch  /> */}
           <SaleProduct />
-          <ProductAccessories  />
+          <ProductAccessories />
           <BlogComponent />
         </div>
       </div>

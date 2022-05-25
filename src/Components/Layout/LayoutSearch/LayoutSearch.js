@@ -4,8 +4,8 @@ import Header from "../LayoutHome/Header/Header";
 import Footer from "../LayoutHome/Footer/Footer";
 import "./LayoutSearch.scss";
 import BreadCrumb from "../../Breadcrumb/Breadcrumb";
-import ProductPage from "../../Pages/ProductPages/ProductPage"
-import {SearchPage} from "../../Pages/SearchPages/SearchPage"
+import ProductPage from "../../Pages/ProductPages/ProductPage";
+import { SearchPage } from "../../Pages/SearchPages/SearchPage";
 
 function LayoutSearch({ children }) {
   const [headerScroll, setHeaderScroll] = useState(false);
@@ -32,8 +32,7 @@ function LayoutSearch({ children }) {
       >
         <div className="content">
           <BreadCrumb />
-          <SearchPage/>
-          <ProductPage/>
+          {children}
         </div>
       </div>
       <Footer />

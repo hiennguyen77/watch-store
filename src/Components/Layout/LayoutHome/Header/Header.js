@@ -1,4 +1,3 @@
-
 import { Link, NavLink } from "react-router-dom";
 import Tippy from "@tippyjs/react/headless";
 import { FaFacebookF, FaGoogle, FaTwitter, FaVimeoV } from "react-icons/fa";
@@ -10,11 +9,7 @@ import { HeaderMenuPr } from "./HeaderMenus/HeaderMenuPr";
 import { HeaderMenuBrand } from "./HeaderMenus/HeaderMenuBrand";
 import "./Header.scss";
 
-
-
-
 function Header(props) {
-  
   const { headerScroll } = props;
   return (
     <>
@@ -108,8 +103,8 @@ function Header(props) {
               <div className="Navigation_wrap">
                 <div className="Navigation_container">
                   <div className="Navigation_item">
-                    <NavLink  className="Navigation_link" to="/">
-                       Trang chủ 
+                    <NavLink className="Navigation_link" to="/">
+                      Trang chủ
                     </NavLink>
                   </div>
 
@@ -123,13 +118,11 @@ function Header(props) {
                       )}
                     >
                       <NavLink className="Navigation_link sudoEl" to="/product">
-                        
-                          {" "}
-                          Sản phẩm
-                          <i>
-                            <BsChevronDown className="down" />
-                          </i>
-                        
+                        {" "}
+                        Sản phẩm
+                        <i>
+                          <BsChevronDown className="down" />
+                        </i>
                       </NavLink>
                     </Tippy>
                   </div>
@@ -147,32 +140,30 @@ function Header(props) {
                         className="Navigation_link sudoEl sudoElBrand"
                         to="/brand"
                       >
-                        
-                          {" "}
-                          nhãn hiệu
-                          <i>
-                            <BsChevronDown className="down" />
-                          </i>
-                       
+                        {" "}
+                        nhãn hiệu
+                        <i>
+                          <BsChevronDown className="down" />
+                        </i>
                       </NavLink>
                     </Tippy>
                   </div>
 
                   <div className="Navigation_item">
                     <Link className="Navigation_link" to="/about">
-                       Giới thiệu 
+                      Giới thiệu
                     </Link>
                   </div>
 
                   <div className="Navigation_item">
                     <NavLink className="Navigation_link" to="/blog">
-                       Blog 
+                      Blog
                     </NavLink>
                   </div>
 
                   <div className="Navigation_item">
                     <NavLink className="Navigation_link" to="/contact">
-                       Liên hệ 
+                      Liên hệ
                     </NavLink>
                   </div>
                 </div>
