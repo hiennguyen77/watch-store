@@ -1,6 +1,7 @@
 import "../../../Grid/Grid.css";
 import "./ProductPage.scss";
 import { ProductCard } from "../../Products/ProductCards/ProductCard";
+import { SaleProductCard } from "../../Products/ProductCards/SaleProductCard";
 import { FilterBrand } from "./SideBar/Filters/FilterBrand";
 import { FilterPrice } from "./SideBar/Filters/FilterPrice";
 import { useState, useEffect } from "react";
@@ -62,16 +63,26 @@ function ProductPage(props) {
             </div>
             <div className="col l-10">
               <div className="productPage_product row no-gutters">
-                {filteredProducts.map((product, index) => (
-                  <div className="col l-3 m-3 c-12" key={index}>
-                    <ProductCard
-                      name={product.name}
-                      URL={product.URL}
-                      price={product.price}
-                      salePrice={product.salePrice}
-                    />
-                  </div>
-                ))}
+                {filteredProducts.map((product, index) =>
+                  product.salePrice ? (
+                    <div className="col l-3 m-3 c-12" key={index}>
+                      <SaleProductCard
+                        name={product.name}
+                        URL={product.URL}
+                        price={product.price}
+                        salePrice={product.salePrice}
+                      />
+                    </div>
+                  ) : (
+                    <div className="col l-3 m-3 c-12" key={index}>
+                      <ProductCard
+                        name={product.name}
+                        URL={product.URL}
+                        price={product.price}
+                      />
+                    </div>
+                  )
+                )}
               </div>
             </div>
           </div>

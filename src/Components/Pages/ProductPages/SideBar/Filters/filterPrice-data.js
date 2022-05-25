@@ -19,7 +19,10 @@ export const prices = [
       setValue(2);
 
       const filterPrice = allProducts.filter((product) => {
-        return product.price < 500000;
+        const finalPrice = product.salePrice
+          ? product.salePrice
+          : product.price;
+        return finalPrice < 500000;
       });
       setFilterProducts(filterPrice);
     },
@@ -32,7 +35,10 @@ export const prices = [
       const { allProducts, setFilterProducts } = props;
       setValue(3);
       const filterPrice = allProducts.filter((product) => {
-        return product.price >= 500000 && product.price < 1000000;
+        const finalPrice = product.salePrice
+          ? product.salePrice
+          : product.price;
+        return finalPrice >= 500000 && finalPrice < 1000000;
       });
       setFilterProducts(filterPrice);
     },
@@ -45,7 +51,10 @@ export const prices = [
       const { allProducts, setFilterProducts } = props;
       setValue(4);
       const filterPrice = allProducts.filter((product) => {
-        return product.price >= 1000000 && product.price < 2000000;
+        const finalPrice = product.salePrice
+          ? product.salePrice
+          : product.price;
+        return finalPrice >= 1000000 && finalPrice < 2000000;
       });
       setFilterProducts(filterPrice);
     },
@@ -58,7 +67,10 @@ export const prices = [
       const { allProducts, setFilterProducts } = props;
       setValue(5);
       const filterPrice = allProducts.filter((product) => {
-        return product.price >= 2000000 && product.price <= 3000000;
+        const finalPrice = product.salePrice
+          ? product.salePrice
+          : product.price;
+        return finalPrice >= 2000000 && finalPrice <= 3000000;
       });
       setFilterProducts(filterPrice);
     },
@@ -71,7 +83,10 @@ export const prices = [
       const { allProducts, setFilterProducts } = props;
       setValue(6);
       const filterPrice = allProducts.filter((product) => {
-        return product.price >= 5000000;
+        const finalPrice = product.salePrice
+          ? product.salePrice
+          : product.price;
+        return finalPrice >= 5000000;
       });
       setFilterProducts(filterPrice);
     },
