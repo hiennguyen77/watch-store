@@ -1,5 +1,6 @@
 import "./ProductAccessories.scss";
 import { ProductCard } from "../ProductCards/ProductCard";
+import { SaleProductCard } from "../ProductCards/SaleProductCard";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -14,7 +15,7 @@ function ProductAccessories() {
     const getProductAccessories = async () => {
       try {
         const res = await axios.get(
-          "https://62846a5ca48bd3c40b6ef9ba.mockapi.io/accessorys"
+          "https://6273e9663d2b5100742474a5.mockapi.io/accessorys"
         );
         setProductAccessories(res.data);
       } catch (error) {
@@ -45,14 +46,24 @@ function ProductAccessories() {
           <div className="productAccessories_item row ">
             <div className="col l-12 m-12 c-0">
               <Slider {...settings}>
-                {productAccessories.map((productAccessories, index) => (
-                  <ProductCard
-                    key={index}
-                    name={productAccessories.name}
-                    URL={productAccessories.URL}
-                    price={productAccessories.price}
-                  />
-                ))}
+                {productAccessories.map((productAccessories, index) =>
+                  productAccessories.salePrice ? (
+                    <SaleProductCard
+                      key={index}
+                      name={productAccessories.name}
+                      URL={productAccessories.URL}
+                      price={productAccessories.price}
+                      salePrice={productAccessories.salePrice}
+                    />
+                  ) : (
+                    <ProductCard
+                      key={index}
+                      name={productAccessories.name}
+                      URL={productAccessories.URL}
+                      price={productAccessories.price}
+                    />
+                  )
+                )}
               </Slider>
             </div>
           </div>

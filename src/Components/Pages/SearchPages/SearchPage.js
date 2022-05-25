@@ -19,7 +19,7 @@ export const SearchPage = (props) => {
           </i>
         </div>
       </div>
-      <ProductPage products={products} />
+      <ProductPage />
     </>
   );
 };

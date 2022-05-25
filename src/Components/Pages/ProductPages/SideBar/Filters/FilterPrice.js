@@ -1,15 +1,20 @@
-import { useState } from "react";
 import { Radio } from "antd";
 import "./FilterPrice.scss";
+import { prices } from "./filterPrice-data";
+import { useState } from "react";
 
 export const FilterPrice = (props) => {
-  const { allProducts, setFilterProducts } = props;
+  // const { allProducts, setFilterProducts } = props;
   const [value, setValue] = useState(1);
-
-  const onChange = (e) => {
-    console.log("radio checked", e.target.value);
-    setValue(e.target.value);
-  };
+  console.log(value);
+  // const allPrice = (e) => {
+  //   console.log(e.target.value);
+  //   setValue(e.target.value);
+  //   const filterPrice = allProducts.filter((product) => {
+  //     return product.price < 1000000;
+  //   });
+  //   console.log(filterPrice);
+  // };
 
   return (
     <>
@@ -17,20 +22,21 @@ export const FilterPrice = (props) => {
         <div className="filterPrice_name">
           <h1 className="filterPrice_heading">Giá -</h1>
         </div>
-        <Radio.Group onChange={onChange} value={value}>
-          <Radio value={1}>
-            <p>Toàn bộ</p>
-          </Radio>
-          <Radio value={2}>
-            <p>500.000 - 1.000.000đ</p>
-          </Radio>
-          <Radio value={3}>
-            <p>1.500.000-2.000.000đ</p>
-          </Radio>
-          <Radio value={4}>
-            <p>Trên 3.000.000đ</p>
-          </Radio>
-        </Radio.Group>
+        <div className="filterPriceBody">
+          {prices.map((price) => (
+            <Radio.Group
+              key={price.key}
+              onChange={() => price.callback(props, setValue)}
+              buttonStyle="solid"
+              value={value}
+              checked={value === price.value}
+            >
+              <Radio value={price.value}>
+                <p>{price.label}</p>
+              </Radio>
+            </Radio.Group>
+          ))}
+        </div>
       </div>
     </>
   );

@@ -1,8 +1,7 @@
-import "./ProductCard.scss";
 import { Link } from "react-router-dom";
 
-export const ProductCard = (props) => {
-  const { name, URL, price } = props;
+export const SaleProductCard = (props) => {
+  const { name, URL, price, salePrice } = props;
 
   return (
     <>
@@ -13,7 +12,8 @@ export const ProductCard = (props) => {
             <h6 className="product_card_name">{name}</h6>
           </Link>
           <div className="product_card_price">
-            <h4>{price}đ</h4>
+            <h4>{salePrice}đ</h4>
+            <p>{price}đ</p>
           </div>
         </div>
       </div>

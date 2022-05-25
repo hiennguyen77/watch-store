@@ -10,6 +10,7 @@ const paths = {
   brand: "Nhãn hiệu",
   blog: "Blog",
   contact: "Liên hệ",
+  search: "Tìm kiếm",
 };
 
 const BreadCrumb = () => {
