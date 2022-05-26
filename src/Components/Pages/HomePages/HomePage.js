@@ -9,11 +9,13 @@ import { ProductForWomen } from "../../Products/ProductTypes/productForWomen";
 import ProductAccessories from "../../Products/ProductTypes/ProductAccessories";
 import { Carousels } from "./Components/Carousel";
 import { BlogComponent } from "../HomePages/Components/Blog.comp";
+import { Loading } from "../../Loading/Loading";
 function HomePage(props) {
-  const { products } = props;
+  const { products, loading } = props;
 
   return (
     <>
+      {loading && <Loading />}
       <div className="home_page_wrap">
         <div className="home_page_carousel">
           <Carousels className="carousel" />

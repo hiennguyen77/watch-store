@@ -1,16 +1,13 @@
 .productPage_heading {
-    text-align: center;
-    margin-top: 3rem;
-    .productPage_heading_content {
-
-    }   
+  text-align: center;
+  margin-top: 3rem;
+  .productPage_heading_content {
+  }
 }
-.productPage_sort {
-    padding: 0.5rem 2rem 0.5rem 0.5rem;
-    position: relative;
-    top: -4rem;
-    right:-113rem;
-    outline: none;
-    border-color: #ccc;
-    font-size: 1.5rem;
+
+.filter_Product {
+  position: sticky;
+  top: 3em;
+  margin-top: 3rem;
+  align-self: flex-start;
 }

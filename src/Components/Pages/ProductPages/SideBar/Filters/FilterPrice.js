@@ -27,9 +27,9 @@ export const FilterPrice = (props) => {
             <Radio.Group
               key={price.key}
               onChange={() => price.callback(props, setValue)}
-              buttonStyle="solid"
+              // buttonStyle="solid"
               value={value}
-              checked={value === price.value}
+              // checked={value === price.value}
             >
               <Radio value={price.value}>
                 <p>{price.label}</p>

@@ -3,8 +3,7 @@ import ProductPage from "../ProductPages/ProductPage";
 
 import "./SearchPage.scss";
 
-export const SearchPage = (props) => {
-  const { products } = props;
+export const SearchPage = () => {
   return (
     <>
       <div className="searchPage_wrap">

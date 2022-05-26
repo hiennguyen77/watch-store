@@ -11,6 +11,7 @@ function App() {
   const [products, setProducts] = useState([]);
   const [productType, setProductType] = useState("products");
   const [typeName, setTypeName] = useState("Tất cả");
+  const [loading, setLoading] = useState(true);
 
   const handleProduct = (type, typeName) => {
     setProductType(type);
@@ -25,6 +26,7 @@ function App() {
           `https://6273e9663d2b5100742474a5.mockapi.io/products`
         );
         setProducts(res.data);
+        setLoading(false);
       } catch (error) {
         console.log(error.message);
       }
@@ -54,6 +56,8 @@ function App() {
                       products={products}
                       productType={productType}
                       typeName={typeName}
+                      loading={loading}
+                      setLoading={setLoading}
                     />
                   </Layout>
                 }

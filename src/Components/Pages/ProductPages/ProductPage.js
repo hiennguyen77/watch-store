@@ -4,14 +4,19 @@ import { ProductCard } from "../../Products/ProductCards/ProductCard";
 import { SaleProductCard } from "../../Products/ProductCards/SaleProductCard";
 import { FilterBrand } from "./SideBar/Filters/FilterBrand";
 import { FilterPrice } from "./SideBar/Filters/FilterPrice";
+import { SortProduct } from "./SideBar/Filters/SortProduct";
+import { PaginationPr } from "../../Pagination/Pagination";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Loading } from "../../Loading/Loading";
 
 function ProductPage(props) {
   const { productType, typeName } = props;
-
+  const { loading, setLoading } = props;
   const [allProducts, setAllProducts] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [filterProducts, setFilterProducts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productPerPage, setProductPerPage] = useState(12);
   // allProducts
   // filteredProducts
   // all: 1 2 3 4 5 6 7 8 9 10
@@ -26,7 +31,8 @@ function ProductPage(props) {
           `https://6273e9663d2b5100742474a5.mockapi.io/${productType}`
         );
         setAllProducts(res.data);
-        setFilteredProducts(res.data);
+        setFilterProducts(res.data);
+        setLoading(false);
       } catch (error) {
         console.log(error.message);
       }
@@ -34,36 +40,37 @@ function ProductPage(props) {
     getProductPage();
   }, [productType]);
 
+  const indexOfLastPr = currentPage * productPerPage;
+  const indexOfFistPr = indexOfLastPr - productPerPage;
+  const currentPr = filterProducts.slice(indexOfFistPr, indexOfLastPr);
+
   return (
     <>
+      {loading && <Loading />}
       <div className="productPage_wrap">
-        <div className></div>
         <div className="productPage_heading">
           <h1 className="productPage_heading_content">{typeName}</h1>
         </div>
-        <select className="productPage_sort">
-          <option>Tất cả</option>
-          <option>Giá : Tăng dần</option>
-          <option>Giá : Giảm dần</option>
-          <option>Từ : A-Z</option>
-          <option>Từ : Z-A</option>
-        </select>
+        <SortProduct
+          allProducts={allProducts}
+          setFilterProducts={setFilterProducts}
+        />
         <div className="productPage_container grid wide">
           <div className="productPage_body row no-gutters">
-            <div className="col l-2">
+            <div className="col l-2 filter_Product">
               <FilterBrand
                 allProducts={allProducts}
-                setFilterProducts={setFilteredProducts}
+                setFilterProducts={setFilterProducts}
               />
 
               <FilterPrice
                 allProducts={allProducts}
-                setFilterProducts={setFilteredProducts}
+                setFilterProducts={setFilterProducts}
               />
             </div>
             <div className="col l-10">
               <div className="productPage_product row no-gutters">
-                {filteredProducts.map((product, index) =>
+                {currentPr.map((product, index) =>
                   product.salePrice ? (
                     <div className="col l-3 m-3 c-12" key={index}>
                       <SaleProductCard
@@ -86,6 +93,11 @@ function ProductPage(props) {
               </div>
             </div>
           </div>
+          <PaginationPr
+            filterProducts={filterProducts}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
         </div>
       </div>
     </>

@@ -92,3 +92,46 @@ export const prices = [
     },
   },
 ];
+
+// export const sorting = [
+//   {
+//     key: "key_1",
+//     label: "Tất cả",
+//     value: (props) => {
+//       const { allProducts, setFilteredProducts } = props;
+//       console.log(allProducts);
+//     },
+//   },
+//   {
+//     key: "key_1",
+//     label: "Giá: Cao - Thấp",
+//     value: (props) => {
+//       const { allProducts, setFilteredProducts } = props;
+//       setFilteredProducts(allProducts);
+//     },
+//   },
+//   {
+//     key: "key_2",
+//     label: "Giá: Thấp - Cao",
+//     value: (props) => {
+//       const { allProducts, setFilteredProducts } = props;
+//       setFilteredProducts(allProducts);
+//     },
+//   },
+//   {
+//     key: "key_3",
+//     label: "Từ: A - Z",
+//     value: (props) => {
+//       const { allProducts, setFilteredProducts } = props;
+//       setFilteredProducts(allProducts);
+//     },
+//   },
+//   {
+//     key: "key_4",
+//     label: "Từ: Z - A",
+//     value: (props) => {
+//       const { allProducts, setFilteredProducts } = props;
+//       setFilteredProducts(allProducts);
+//     },
+//   },
+// ];

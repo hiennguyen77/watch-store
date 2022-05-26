@@ -1,0 +1,19 @@
+.loading_container {
+  position: absolute;
+
+  top: 30rem;
+  left: 630px;
+  margin-bottom: 3rem;
+  z-index: 100;
+}
+
+.loading_wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: 0.8;
+  z-index: 99;
+}
