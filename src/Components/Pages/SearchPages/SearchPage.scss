@@ -1,27 +1,26 @@
 .searchPage_wrap {
-    
-    margin: 2rem 0;
+  user-select: none;
+
+  margin: 2rem 0;
   .inputSearch_container {
-      position: relative;
-      
-      display: flex;
+    position: relative;
+
+    display: flex;
 
     .inputSearch {
-        margin: auto;
-        border-radius: 0.2rem;
-        border: 1px solid #999;
-        padding: 0.5rem 1rem;
-        width: 50%;
-        outline: none;
-        
-
+      margin: auto;
+      border-radius: 0.2rem;
+      border: 1px solid #999;
+      padding: 0.5rem 1rem;
+      width: 50%;
+      outline: none;
     }
     .searchPage_icon {
-        position: absolute;
-    top: 0.5rem;
-    right: 35rem;
-    font-size: 2rem;
-    color: #999
-    }   
-  }   
+      position: absolute;
+      top: 0.5rem;
+      right: 35rem;
+      font-size: 2rem;
+      color: #999;
+    }
+  }
 }

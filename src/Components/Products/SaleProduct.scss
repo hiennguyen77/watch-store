@@ -1,33 +1,33 @@
 .home_page_prSale {
-    margin-top: 4rem;
+  margin-top: 4rem;
+  user-select: none;
 }
 .product_sale_item {
-    
-    
 }
 .product_sale_item:hover {
-    opacity: 0.8;
-    transition: all ease .8s;
+  opacity: 0.8;
+  transition: all ease 0.8s;
 }
 
 .Product_sale_link {
-    width: 100%;
-    height: 300px;
+  width: 100%;
+  height: 300px;
 }
 .sale_img {
-    object-fit: cover;
-    height: 300px ;
-    width: 100%;
+  object-fit: cover;
+  height: 300px;
+  width: 100%;
 }
 .sale_content {
-    display: inline-block;
-    position: relative;
-    top: -17rem;
-    left: 12rem;
+  display: inline-block;
+  position: relative;
+  top: -17rem;
+  left: 12rem;
 
-    h1, h2, h3 {
-        color: var(--primary);
-        font-weight: 400;
-    }
-    
+  h1,
+  h2,
+  h3 {
+    color: var(--primary);
+    font-weight: 400;
+  }
 }

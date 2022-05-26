@@ -61,6 +61,7 @@
   animation: menuAnimation;
   animation-duration: 0.5s;
   transition: ease;
+  user-select: none;
 
   .menu_container {
     height: auto;

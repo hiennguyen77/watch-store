@@ -17,6 +17,9 @@ function ProductPage(props) {
   const [filterProducts, setFilterProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [productPerPage, setProductPerPage] = useState(12);
+  const [sortValue, setSortValue] = useState("1");
+
+  console.log(sortValue);
 
   // allProducts
   // filteredProducts
@@ -55,6 +58,7 @@ function ProductPage(props) {
         <SortProduct
           allProducts={allProducts}
           setFilterProducts={setFilterProducts}
+          setSortValue={setSortValue}
         />
         <div className="productPage_container grid wide">
           <div className="productPage_body row no-gutters">

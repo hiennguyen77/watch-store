@@ -1,5 +1,15 @@
 .filterBrand_heading {
-    font-weight: 400;
+  font-weight: 400;
+  color: var(--hover-color);
+  font-size: 2.5rem;
+  user-select: none;
+}
+.ant-checkbox-group {
+  p:hover {
     color: var(--hover-color);
-    font-size: 2.5rem;
+  }
+  p {
+    font-weight: 400;
+    user-select: none;
+  }
 }

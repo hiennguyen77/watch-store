@@ -97,56 +97,61 @@ export const sorting = [
   {
     key: "key_1",
     label: "Tất cả",
-    value: (props) => {
-      const { allProducts, setFilteredProducts } = props;
+    value: (props, setSortValue) => {
+      const { allProducts, setFilterProducts } = props;
       const sorting = allProducts.sort((a, b) => {
         return 0;
       });
-      console.log(sorting);
+      setSortValue(1);
+      setFilterProducts(sorting);
     },
   },
   {
     key: "key_1",
     label: "Giá: Tăng dần",
-    value: (props) => {
-      const { allProducts, setFilteredProducts } = props;
+    value: (props, setSortValue) => {
+      const { allProducts, setFilterProducts } = props;
       const sorting = allProducts.sort((a, b) => {
         return a.price - b.price;
       });
-      console.log(sorting);
+      setSortValue(2);
+      setFilterProducts(sorting);
     },
   },
   {
     key: "key_2",
     label: "Giá: Giảm dần",
-    value: (props) => {
-      const { allProducts, setFilteredProducts } = props;
+    value: (props, setSortValue) => {
+      const { allProducts, setFilterProducts } = props;
       const sorting = allProducts.sort((a, b) => {
         return b.price - a.price;
       });
-      console.log(sorting);
+      setSortValue(3);
+      setFilterProducts(sorting);
     },
   },
   {
     key: "key_3",
     label: "Từ: A - Z",
-    value: (props) => {
-      const { allProducts, setFilteredProducts } = props;
+    value: (props, setSortValue) => {
+      const { allProducts, setFilterProducts } = props;
       const sorting = allProducts.sort((a, b) => {
         return a.name.localeCompare(b.name);
       });
-      console.log(sorting);
+      setSortValue(4);
+      setFilterProducts(sorting);
     },
   },
   {
     key: "key_4",
     label: "Từ: Z - A",
-    value: (props) => {
-      const { allProducts, setFilteredProducts } = props;
+    value: (props, setSortValue) => {
+      const { allProducts, setFilterProducts } = props;
       const sorting = allProducts.sort((a, b) => {
         return b.name.localeCompare(a.name);
       });
-      console.log(sorting);
+      setSortValue(5);
+      setFilterProducts(sorting);
     },
   },
 ];

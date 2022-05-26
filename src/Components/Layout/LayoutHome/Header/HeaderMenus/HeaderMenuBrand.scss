@@ -8,6 +8,7 @@
   animation: menuBrandAnimation1;
   animation-duration: 0.5s;
   transition: ease;
+  user-select: none;
 
   .menuBrand_container {
     height: auto;
