@@ -1,7 +1,15 @@
 import "./SortProduct.scss";
-import { useState } from "react";
 
 export const SortProduct = (props) => {
+  const { allProducts, setFilterProducts } = props;
+
+  // const handleSorting = () => {
+  //   const sorting = allProducts.sort((a, b) => {
+  //     return a.price - b.price;
+  //   });
+  //   console.log(sorting);
+  // };
+
   return (
     <>
       <select className="productPage_sort">

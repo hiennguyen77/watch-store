@@ -6,7 +6,7 @@ import { useState } from "react";
 export const FilterPrice = (props) => {
   // const { allProducts, setFilterProducts } = props;
   const [value, setValue] = useState(1);
-  console.log(value);
+
   // const allPrice = (e) => {
   //   console.log(e.target.value);
   //   setValue(e.target.value);

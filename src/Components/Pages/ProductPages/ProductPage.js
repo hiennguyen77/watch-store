@@ -17,6 +17,7 @@ function ProductPage(props) {
   const [filterProducts, setFilterProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [productPerPage, setProductPerPage] = useState(12);
+
   // allProducts
   // filteredProducts
   // all: 1 2 3 4 5 6 7 8 9 10

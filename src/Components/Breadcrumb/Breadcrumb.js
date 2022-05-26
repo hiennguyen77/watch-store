@@ -30,6 +30,7 @@ const BreadCrumb = () => {
           ) : (
             <Breadcrumb.Item>Trang chủ</Breadcrumb.Item>
           )}
+
           {pathNames.map((name, index) => {
             const routeTo = `/${pathNames.slice(0, index + 1).join("/")}`;
             const isLast = index === pathNames.length - 1;
