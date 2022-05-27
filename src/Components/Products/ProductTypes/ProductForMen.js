@@ -2,24 +2,28 @@ import "./ProductForMen.scss";
 import { ProductCard } from "../ProductCards/ProductCard";
 import { SaleProductCard } from "../ProductCards/SaleProductCard";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import axios from "axios";
+// import { useState, useEffect } from "react";
+// import axios from "axios";
 
-export function ProductForMen() {
-  const [productForMens, setProductForMens] = useState([]);
-  useEffect(() => {
-    const getProductMen = async () => {
-      try {
-        const res = await axios.get(
-          "https://6273e9663d2b5100742474a5.mockapi.io/productForMens"
-        );
-        setProductForMens(res.data);
-      } catch (error) {
-        console.log(error.message);
-      }
-    };
-    getProductMen();
-  }, []);
+export function ProductForMen(props) {
+  const { products } = props;
+  const menProduct = products.filter((product) => {
+    return product.item === "male";
+  });
+  // const [productForMens, setProductForMens] = useState([]);
+  // useEffect(() => {
+  //   const getProductMen = async () => {
+  //     try {
+  //       const res = await axios.get(
+  //         "https://6273e9663d2b5100742474a5.mockapi.io/productForMens"
+  //       );
+  //       setProductForMens(res.data);
+  //     } catch (error) {
+  //       console.log(error.message);
+  //     }
+  //   };
+  //   getProductMen();
+  // }, []);
 
   return (
     <>
@@ -28,7 +32,7 @@ export function ProductForMen() {
           <h1 className="productForMen_name">Đồng hồ nam</h1>
         </div>
         <div className="productForMen_container grid wide">
-          <div className="productForMen_item row ">
+          <div className="productForMen_item row sm-gutter">
             <div className="col l-12 m-0 c-0 ">
               <Link to="">
                 <div className="productForMen_img_container">
@@ -41,8 +45,8 @@ export function ProductForMen() {
               </Link>
             </div>
           </div>
-          <div className="productForMen_row row ">
-            {productForMens.map((productForMen, index) =>
+          <div className="productForMen_row row  ">
+            {menProduct.map((productForMen, index) =>
               productForMen.salePrice ? (
                 <div className="col l-3 m-4 c-12 " key={index}>
                   <SaleProductCard

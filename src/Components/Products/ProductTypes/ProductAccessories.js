@@ -5,25 +5,29 @@ import { SaleProductCard } from "../ProductCards/SaleProductCard";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { useState, useEffect, memo } from "react";
-import axios from "axios";
+import { memo } from "react";
+// import axios from "axios";
 
-function ProductAccessories() {
-  const [productAccessories, setProductAccessories] = useState([]);
+function ProductAccessories(props) {
+  const { products } = props;
+  // const [productAccessories, setProductAccessories] = useState([]);
 
-  useEffect(() => {
-    const getProductAccessories = async () => {
-      try {
-        const res = await axios.get(
-          "https://6273e9663d2b5100742474a5.mockapi.io/accessorys"
-        );
-        setProductAccessories(res.data);
-      } catch (error) {
-        console.log(error.message);
-      }
-    };
-    getProductAccessories();
-  }, []);
+  // useEffect(() => {
+  //   const getProductAccessories = async () => {
+  //     try {
+  //       const res = await axios.get(
+  //         "https://6273e9663d2b5100742474a5.mockapi.io/accessorys"
+  //       );
+  //       setProductAccessories(res.data);
+  //     } catch (error) {
+  //       console.log(error.message);
+  //     }
+  //   };
+  //   getProductAccessories();
+  // }, []);
+  const accessoryPr = products.filter((product) => {
+    return product.item === "accessory";
+  });
 
   var settings = {
     dots: false,
@@ -43,10 +47,10 @@ function ProductAccessories() {
           <h1 className="productAccessories_name">Phụ kiện đồng hồ</h1>
         </div>
         <div className="productAccessories_container grid wide">
-          <div className="productAccessories_item row ">
+          <div className="productAccessories_item row sm-gutter ">
             <div className="col l-12 m-12 c-0">
               <Slider {...settings}>
-                {productAccessories.map((productAccessories, index) =>
+                {accessoryPr.map((productAccessories, index) =>
                   productAccessories.salePrice ? (
                     <SaleProductCard
                       key={index}

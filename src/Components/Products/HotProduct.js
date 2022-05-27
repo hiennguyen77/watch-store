@@ -17,8 +17,8 @@ export function HotProduct(props) {
           <button>Đồng hồ nữ</button>
           <button>Phụ kiện</button>
         </div>
-        <div className="HotProduct_container grid wide">
-          <div className="HotProduct_item row">
+        <div className="HotProduct_container ">
+          <div className="HotProduct_item row sm-gutter">
             {hotProducts.map((hotProduct, index) =>
               hotProduct.salePrice ? (
                 <div className="col l-3 m-4 c-12 " key={index}>

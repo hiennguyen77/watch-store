@@ -9,15 +9,6 @@
   text-align: center;
   position: relative;
 }
-.productAccessories_name::after {
-  content: "";
-  position: absolute;
-  width: 99px;
-  height: 3px;
-  background-color: var(--hover-color);
-  top: 4.8rem;
-  right: 55rem;
-}
 
 .productAccessories_img_container {
   width: 100%;

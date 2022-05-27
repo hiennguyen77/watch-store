@@ -23,11 +23,11 @@ function HomePage(props) {
         <div className="home_page_container grid wide">
           <NewProduct products={products} />
           <HotProduct products={products} />
-          <ProductForMen />
-          <ProductForWomen />
+          <ProductForMen products={products} />
+          <ProductForWomen products={products} />
           {/* <ProductSmartWatch  /> */}
           <SaleProduct />
-          <ProductAccessories />
+          <ProductAccessories products={products} />
           <BlogComponent />
         </div>
       </div>

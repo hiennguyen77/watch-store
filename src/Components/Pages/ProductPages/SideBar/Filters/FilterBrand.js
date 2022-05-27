@@ -38,11 +38,12 @@ export const FilterBrand = (props) => {
             <Checkbox value="brand_4">
               <p>HUBLOT</p>
             </Checkbox>
+
             <Checkbox value="brand_5">
-              <p>APPLE WATCH</p>
+              <p>TAG HEUER</p>
             </Checkbox>
             <Checkbox value="brand_6">
-              <p>TAG HEUER</p>
+              <p>APPLE WATCH</p>
             </Checkbox>
           </Checkbox.Group>
         </div>

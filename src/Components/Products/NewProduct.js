@@ -6,7 +6,7 @@ import { ProductCard } from "./ProductCards/ProductCard";
 import { SaleProductCard } from "./ProductCards/SaleProductCard";
 export function NewProduct(props) {
   const { products } = props;
-  const newProducts = products.slice(0, 4);
+  const newProducts = products.slice(0, 5);
 
   var settings = {
     dots: false,
