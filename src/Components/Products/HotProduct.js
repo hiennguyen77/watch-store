@@ -1,7 +1,7 @@
 import "./HotProduct.scss";
 import { ProductCard } from "./ProductCards/ProductCard";
 import { SaleProductCard } from "./ProductCards/SaleProductCard";
-
+import { useState } from "react";
 export function HotProduct(props) {
   const { products } = props;
   const hotProducts = products.slice(4, 8);

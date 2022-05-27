@@ -6,7 +6,7 @@ export const PaginationPr = (props) => {
   const { filterProducts, currentPage, setCurrentPage } = props;
 
   const onChange = (page) => {
-    console.log(page);
+    // console.log(page);
     setCurrentPage(page);
   };
   return (

@@ -8,6 +8,7 @@ import LoginPage from "../Components/Pages/LoginPages/LoginPage";
 import RegistrationPage from "../Components/Pages/RegistrationPages/RegistrationPage";
 import LayoutOther from "../Components/Layout/LayoutOthers/LayoutOther";
 import { SearchPage } from "../Components/Pages/SearchPages/SearchPage";
+import { ProductDetail } from "../Components/Pages/ProductDetailPage/ProductDetail";
 
 const publicRoutes = [
   { path: "/", component: HomePage },
@@ -19,6 +20,7 @@ const publicRoutes = [
   { path: "/Login", component: LoginPage, layout: LayoutOther },
   { path: "/registration", component: RegistrationPage, layout: LayoutOther },
   { path: "/search", component: SearchPage, layout: LayoutOther },
+  { path: "/product_detail", component: ProductDetail, layout: LayoutOther },
 ];
 
 const privateRoutes = [];
