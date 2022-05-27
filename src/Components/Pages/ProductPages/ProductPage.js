@@ -17,9 +17,7 @@ function ProductPage(props) {
   const [filterProducts, setFilterProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [productPerPage, setProductPerPage] = useState(12);
-  const [sortValue, setSortValue] = useState("1");
-
-  console.log(sortValue);
+  const [sortValue, setSortValue] = useState();
 
   // allProducts
   // filteredProducts
@@ -44,6 +42,7 @@ function ProductPage(props) {
     getProductPage();
   }, [productType]);
 
+  //Pagination-Product.
   const indexOfLastPr = currentPage * productPerPage;
   const indexOfFistPr = indexOfLastPr - productPerPage;
   const currentPr = filterProducts.slice(indexOfFistPr, indexOfLastPr);
@@ -59,6 +58,7 @@ function ProductPage(props) {
           allProducts={allProducts}
           setFilterProducts={setFilterProducts}
           setSortValue={setSortValue}
+          sortValue={sortValue}
         />
         <div className="productPage_container grid wide">
           <div className="productPage_body row no-gutters">

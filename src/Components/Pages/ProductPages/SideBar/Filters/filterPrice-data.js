@@ -96,61 +96,66 @@ export const prices = [
 export const sorting = [
   {
     key: "key_1",
-    label: "Tất cả",
-    value: (props, setSortValue) => {
+    value: 1,
+    label: "Sản phẩm nổi bật",
+    callback: (props) => {
       const { allProducts, setFilterProducts } = props;
       const sorting = allProducts.sort((a, b) => {
         return 0;
       });
-      setSortValue(1);
-      setFilterProducts(sorting);
-    },
-  },
-  {
-    key: "key_1",
-    label: "Giá: Tăng dần",
-    value: (props, setSortValue) => {
-      const { allProducts, setFilterProducts } = props;
-      const sorting = allProducts.sort((a, b) => {
-        return a.price - b.price;
-      });
-      setSortValue(2);
+
       setFilterProducts(sorting);
     },
   },
   {
     key: "key_2",
-    label: "Giá: Giảm dần",
-    value: (props, setSortValue) => {
+    value: 2,
+    label: "Giá: Tăng dần",
+    callback: (props) => {
       const { allProducts, setFilterProducts } = props;
       const sorting = allProducts.sort((a, b) => {
-        return b.price - a.price;
+        return a.price - b.price;
       });
-      setSortValue(3);
+
       setFilterProducts(sorting);
     },
   },
   {
     key: "key_3",
-    label: "Từ: A - Z",
-    value: (props, setSortValue) => {
+    value: 3,
+    label: "Giá: Giảm dần",
+    callback: (props) => {
       const { allProducts, setFilterProducts } = props;
       const sorting = allProducts.sort((a, b) => {
-        return a.name.localeCompare(b.name);
+        return b.price - a.price;
       });
-      setSortValue(4);
+
       setFilterProducts(sorting);
     },
   },
   {
     key: "key_4",
+    value: 4,
+    label: "Từ: A - Z",
+    callback: (props) => {
+      const { allProducts, setFilterProducts } = props;
+      const sorting = allProducts.sort((a, b) => {
+        return a.name.localeCompare(b.name);
+      });
+
+      setFilterProducts(sorting);
+    },
+  },
+  {
+    key: "key_5",
+    value: 5,
     label: "Từ: Z - A",
-    value: (props, setSortValue) => {
+    callback: (props) => {
       const { allProducts, setFilterProducts } = props;
       const sorting = allProducts.sort((a, b) => {
         return b.name.localeCompare(a.name);
       });
-      setSortValue(5);
+
       setFilterProducts(sorting);
     },
   },

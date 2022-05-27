@@ -4,7 +4,7 @@ import { sorting } from "./filterPrice-data";
 import { useState } from "react";
 
 export const SortProduct = (props) => {
-  const { allProducts, setFilterProducts, setSortValue } = props;
+  const { setSortValue, sortValue } = props;
 
   return (
     <>
@@ -24,8 +24,13 @@ export const SortProduct = (props) => {
           <ul className="sorProduct_list">
             {sorting.map((sort, index) => (
               <li
-                onClick={() => sort.value(props, setSortValue)}
-                className="sortProduct_item"
+                onClick={() => {
+                  setSortValue(sort.value);
+                  sort.callback(props);
+                }}
+                className={
+                  sortValue === sort.value ? "active" : "sortProduct_item"
+                }
                 key={index}
               >
                 {sort.label}
