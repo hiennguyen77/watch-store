@@ -1,10 +1,11 @@
 import "./ProductCard.scss";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { productDetailContext } from "../../../App";
+import { productContext } from "../../../Contexts/ProductContext";
+
 export const ProductCard = (props) => {
   const { name, URL, price } = props;
-  const handleProductDetail = useContext(productDetailContext);
+  const { handleProductDetail } = useContext(productContext);
 
   return (
     <>

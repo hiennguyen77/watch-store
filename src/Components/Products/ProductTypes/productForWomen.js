@@ -11,20 +11,6 @@ export function ProductForWomen(props) {
   const womenProduct = products.filter((product) => {
     return product.item === "female";
   });
-  // const [productForWomens, setProductForWomens] = useState([]);
-  // useEffect(() => {
-  //   const getProductForWomen = async () => {
-  //     try {
-  //       const res = await axios.get(
-  //         "https://6273e9663d2b5100742474a5.mockapi.io/productWomens"
-  //       );
-  //       setProductForWomens(res.data);
-  //     } catch (error) {
-  //       console.log(error.message);
-  //     }
-  //   };
-  //   getProductForWomen();
-  // }, []);
 
   return (
     <>

@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { productDetailContext } from "../../../App";
+import { productContext } from "../../../Contexts/ProductContext";
+
 export const SaleProductCard = (props) => {
-  const handleProductDetail = useContext(productDetailContext);
+  const { handleProductDetail } = useContext(productContext);
   const { name, URL, price, salePrice } = props;
 
   return (

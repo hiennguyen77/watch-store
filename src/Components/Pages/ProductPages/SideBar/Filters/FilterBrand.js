@@ -3,7 +3,7 @@ import "antd/dist/antd.css";
 import "./FilterBrand.scss";
 
 export const FilterBrand = (props) => {
-  const { allProducts, setFilterProducts } = props;
+  const { allProducts, setFilterProducts, setTypeName } = props;
 
   function onChange(checkedValues) {
     // nhung-product có: brandId-nằm-trong-checkValues
@@ -14,6 +14,7 @@ export const FilterBrand = (props) => {
 
     if (filterProduct.length > 0) {
       setFilterProducts(filterProduct);
+      setTypeName("Tất cả");
     } else {
       setFilterProducts(allProducts);
     }

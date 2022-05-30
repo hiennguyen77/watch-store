@@ -1,10 +1,11 @@
 import "./HeaderMenuPr.scss";
 import { Link } from "react-router-dom";
-import { productContext } from "../../../../../App";
+
 import { useContext } from "react";
+import { productContext } from "../../../../../Contexts/ProductContext";
 
 const productTypes = [
-  { typeName: "Tất cả", type: "products" },
+  // { typeName: "Tất cả", type: "products" },
   { typeName: "Đồng hồ nam", type: "productForMens", item: "male" },
   { typeName: "Đồng hồ nữ", type: "productWomens", item: "female" },
   { typeName: "Phụ kiện", type: "accessorys", item: "accessory" },
@@ -12,7 +13,13 @@ const productTypes = [
 
 export function HeaderMenuPr(props) {
   const { menuScroll } = props;
-  const handleProduct = useContext(productContext);
+  const { handleProduct, setFilterProducts, products, setTypeName } =
+    useContext(productContext);
+
+  const handleAllProduct = () => {
+    setTypeName("Tất cả");
+    setFilterProducts(products);
+  };
 
   return (
     <>
@@ -25,12 +32,17 @@ export function HeaderMenuPr(props) {
       >
         <div className="menu_container">
           <ul className="menu_list">
+            <li className="menu_item" onClick={handleAllProduct}>
+              <Link to="/product" className="menu_link">
+                <h6>Tất cả</h6>
+              </Link>
+            </li>
             {productTypes.map((productType, index) => (
               <li
                 className="menu_item "
                 key={index}
                 onClick={() =>
-                  handleProduct(productType.type, productType.typeName)
+                  handleProduct(productType.item, productType.typeName)
                 }
               >
                 <Link className="menu_link" to="/product">

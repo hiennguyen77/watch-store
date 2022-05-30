@@ -1,7 +1,6 @@
 import "./SortProduct.scss";
 import { BsChevronDown } from "react-icons/bs";
 import { sorting } from "./filterPrice-data";
-import { useState } from "react";
 
 export const SortProduct = (props) => {
   const { setSortValue, sortValue } = props;

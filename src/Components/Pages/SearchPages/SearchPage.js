@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "../../../Grid/Grid.css";
 import { FiSearch } from "react-icons/fi";
 import { ProductCard } from "../../Products/ProductCards/ProductCard";
 import { PaginationPr } from "../../Pagination/Pagination";
+
 import "./SearchPage.scss";
+import { productContext } from "../../../Contexts/ProductContext";
 
 export const SearchPage = (props) => {
-  const { products } = props;
+  const { products } = useContext(productContext);
   const [inputValue, setInputValue] = useState("");
   const [filterPrs, setFilterPrs] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -67,7 +69,7 @@ export const SearchPage = (props) => {
             )}
           </div>
         </div>
-        {filterPrs.length > 0 ? (
+        {filterPrs.length > 15 ? (
           <PaginationPr
             filterProducts={products}
             currentPage={currentPage}

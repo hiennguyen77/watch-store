@@ -6,41 +6,28 @@ import { FilterBrand } from "./SideBar/Filters/FilterBrand";
 import { FilterPrice } from "./SideBar/Filters/FilterPrice";
 import { SortProduct } from "./SideBar/Filters/SortProduct";
 import { PaginationPr } from "../../Pagination/Pagination";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useContext } from "react";
 import { Loading } from "../../Loading/Loading";
+import { productContext } from "../../../Contexts/ProductContext";
 
 function ProductPage(props) {
-  const { productType, typeName } = props;
-  const { loading, setLoading } = props;
-  const [allProducts, setAllProducts] = useState([]);
-  const [filterProducts, setFilterProducts] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [productPerPage, setProductPerPage] = useState(12);
-  const [sortValue, setSortValue] = useState();
+  const {
+    loading,
+    products,
+    setFilterProducts,
+    filterProducts,
+    typeName,
+    setTypeName,
+    setCurrentPage,
+    currentPage,
+    productPerPage,
+    sortValue,
+    setSortValue,
+  } = useContext(productContext);
 
-  // allProducts
-  // filteredProducts
-  // all: 1 2 3 4 5 6 7 8 9 10
-  // filter-so-chan: 2 4 6 8 10
-  // filter-chan-lon-hon-5: 6 8 10
-  // all->filter-so-chan->filter-lon-hon-5->ket-qua
-  // all
-  useEffect(() => {
-    const getProductPage = async () => {
-      try {
-        const res = await axios.get(
-          `https://6273e9663d2b5100742474a5.mockapi.io/${productType}`
-        );
-        setAllProducts(res.data);
-        setFilterProducts(res.data);
-        setLoading(false);
-      } catch (error) {
-        console.log(error.message);
-      }
-    };
-    getProductPage();
-  }, [productType]);
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const [productPerPage, setProductPerPage] = useState(12);
+  // const [sortValue, setSortValue] = useState();
 
   //Pagination-Product.
   const indexOfLastPr = currentPage * productPerPage;
@@ -55,22 +42,25 @@ function ProductPage(props) {
           <h1 className="productPage_heading_content">{typeName}</h1>
         </div>
         <SortProduct
-          allProducts={allProducts}
+          allProducts={products}
           setFilterProducts={setFilterProducts}
           setSortValue={setSortValue}
           sortValue={sortValue}
+          setTypeName={setTypeName}
         />
         <div className="productPage_container grid wide">
           <div className="productPage_body row no-gutters">
             <div className="col l-2 filter_Product">
               <FilterBrand
-                allProducts={allProducts}
+                allProducts={products}
                 setFilterProducts={setFilterProducts}
+                setTypeName={setTypeName}
               />
 
               <FilterPrice
-                allProducts={allProducts}
+                allProducts={products}
                 setFilterProducts={setFilterProducts}
+                setTypeName={setTypeName}
               />
             </div>
             <div className="col l-10">

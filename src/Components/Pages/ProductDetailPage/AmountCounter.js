@@ -1,9 +1,10 @@
 import "./AmountCounter.scss";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
-import { useState } from "react";
+import { useContext } from "react";
+import { productContext } from "../../../Contexts/ProductContext";
 
 export const AmountCounter = () => {
-  const [amount, setAmount] = useState(1);
+  const { amount, setAmount } = useContext(productContext);
   console.log(amount);
   return (
     <>

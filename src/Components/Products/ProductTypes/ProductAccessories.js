@@ -10,21 +10,7 @@ import { memo } from "react";
 
 function ProductAccessories(props) {
   const { products } = props;
-  // const [productAccessories, setProductAccessories] = useState([]);
 
-  // useEffect(() => {
-  //   const getProductAccessories = async () => {
-  //     try {
-  //       const res = await axios.get(
-  //         "https://6273e9663d2b5100742474a5.mockapi.io/accessorys"
-  //       );
-  //       setProductAccessories(res.data);
-  //     } catch (error) {
-  //       console.log(error.message);
-  //     }
-  //   };
-  //   getProductAccessories();
-  // }, []);
   const accessoryPr = products.filter((product) => {
     return product.item === "accessory";
   });

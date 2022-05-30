@@ -10,8 +10,10 @@ import ProductAccessories from "../../Products/ProductTypes/ProductAccessories";
 import { Carousels } from "./Components/Carousel";
 import { BlogComponent } from "../HomePages/Components/Blog.comp";
 import { Loading } from "../../Loading/Loading";
-function HomePage(props) {
-  const { products, loading } = props;
+import { productContext } from "../../../Contexts/ProductContext";
+import { useContext } from "react";
+function HomePage() {
+  const { products, loading } = useContext(productContext);
 
   return (
     <>
