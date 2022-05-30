@@ -9,7 +9,7 @@ import RegistrationPage from "../Components/Pages/RegistrationPages/Registration
 import LayoutOther from "../Components/Layout/LayoutOthers/LayoutOther";
 import { SearchPage } from "../Components/Pages/SearchPages/SearchPage";
 import { ProductDetail } from "../Components/Pages/ProductDetailPage/ProductDetail";
-
+import { CheckoutPage } from "../Components/Pages/CheckoutPage/CheckoutPage";
 const publicRoutes = [
   { path: "/", component: HomePage },
   { path: "/product", component: ProductPage, layout: LayoutOther },
@@ -21,6 +21,7 @@ const publicRoutes = [
   { path: "/registration", component: RegistrationPage, layout: LayoutOther },
   { path: "/search", component: SearchPage, layout: LayoutOther },
   { path: "/product_detail", component: ProductDetail, layout: LayoutOther },
+  { path: "/checkout", component: CheckoutPage, layout: LayoutOther },
 ];
 
 const privateRoutes = [];

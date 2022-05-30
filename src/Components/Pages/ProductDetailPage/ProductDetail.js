@@ -1,13 +1,19 @@
 import "../../../Grid/Grid.css";
 import "./ProductDetail.scss";
+import { Link } from "react-router-dom";
 import { AmountCounter } from "./AmountCounter";
 import { Idea } from "./Idea";
 import { RelateProduct } from "./RelateProduct";
+import { ProductBtn } from "../../ProductBtn/ProductBtn";
+
+// import { useState, useContext } from "react";
+// import { addCart } from "../../../App";
 
 export const ProductDetail = (props) => {
   const { products, productDetailName, productDetailPrice, productDetailImg } =
     props;
-  console.log(productDetailName, productDetailPrice, productDetailImg);
+
+  // console.log(productDetailName, productDetailPrice, productDetailImg);
   return (
     <>
       <div className="productsDetail_wrap">
@@ -23,10 +29,19 @@ export const ProductDetail = (props) => {
                 <div>
                   <AmountCounter />
                 </div>
-                <div className="productDetail_right-btn">
-                  <button className="add_product-btn">Thêm giỏ hàng</button>
-                  <button className="checkout_product-btn">Thanh toán</button>
-                </div>
+                <ProductBtn>
+                  <Link to="/cart">
+                    <button className=" product_btn add_product-btn">
+                      Thêm giỏ hàng
+                    </button>
+                  </Link>
+                  <Link to="/checkout">
+                    <button className=" product_btn checkout_product-btn">
+                      Thanh toán
+                    </button>
+                  </Link>
+                </ProductBtn>
+
                 <div className="productDetail_describe">
                   <h3>Mô tả</h3>
                   <ul>

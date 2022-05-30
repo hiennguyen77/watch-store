@@ -6,17 +6,20 @@ import reportWebVitals from "./reportWebVitals";
 import GlobalStyles from "./GlobalStyles/GlobalStyle";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import { BackToTop } from "./Components/BackToTop/BackToTop";
+import ProductContextProvider from "./Contexts/ProductContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <GlobalStyles>
-      <Router>
-        <ScrollToTop />
-        <App />
-        <BackToTop />
-      </Router>
-    </GlobalStyles>
+    <ProductContextProvider>
+      <GlobalStyles>
+        <Router>
+          <ScrollToTop />
+          <App />
+          <BackToTop />
+        </Router>
+      </GlobalStyles>
+    </ProductContextProvider>
   </React.StrictMode>
 );
 

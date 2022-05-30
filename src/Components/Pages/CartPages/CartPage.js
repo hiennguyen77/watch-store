@@ -1,5 +1,6 @@
-import './CartPage.scss';
+import "./CartPage.scss";
+
 function CartPage() {
-    return <h1>CartPage</h1>
+  return <h1>CartPage</h1>;
 }
 export default CartPage;

@@ -7,6 +7,7 @@ import { useState, useEffect, createContext } from "react";
 
 export const productContext = createContext();
 export const productDetailContext = createContext();
+// export const addCart = createContext();
 
 function App() {
   const [products, setProducts] = useState([]);

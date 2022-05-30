@@ -1,0 +1,23 @@
+.productBtn {
+  margin-top: 4rem;
+  .product_btn {
+    font-size: 1.8rem;
+    padding: 0.8rem 3rem;
+    margin-right: 0.8rem;
+    max-width: 50rem;
+    width: 25rem;
+    border: 1px solid var(--hover-color);
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 3px;
+  }
+  .add_product-btn {
+    background-color: var(--white-color);
+    color: var(--primary);
+  }
+
+  .checkout_product-btn {
+    background-color: var(--hover-color);
+    color: var(--white-color);
+  }
+}
