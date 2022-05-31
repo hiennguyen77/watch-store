@@ -5,11 +5,13 @@
   margin-top: 3rem;
   border: 1px solid #dfdfdf;
   width: 14rem;
+  user-select: none;
 
   .plus-btn {
     font-size: 1.8drem;
     padding-top: 0.5rem;
     border-left: 1px solid #dfdfdf;
+    cursor: pointer;
 
     i {
       padding: 1rem 1rem;
@@ -26,6 +28,7 @@
     }
   }
   .minus-btn {
+    cursor: pointer;
     font-size: 1.8rem;
     padding-top: 0.5rem;
     border-right: 1px solid #dfdfdf;
