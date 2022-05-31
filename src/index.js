@@ -7,18 +7,21 @@ import GlobalStyles from "./GlobalStyles/GlobalStyle";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import { BackToTop } from "./Components/BackToTop/BackToTop";
 import ProductContextProvider from "./Contexts/ProductContext";
+import CartContextProvider from "./Contexts/CartContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ProductContextProvider>
-      <GlobalStyles>
-        <Router>
-          <ScrollToTop />
-          <App />
-          <BackToTop />
-        </Router>
-      </GlobalStyles>
+      <CartContextProvider>
+        <GlobalStyles>
+          <Router>
+            <ScrollToTop />
+            <App />
+            <BackToTop />
+          </Router>
+        </GlobalStyles>
+      </CartContextProvider>
     </ProductContextProvider>
   </React.StrictMode>
 );

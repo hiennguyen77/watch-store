@@ -38,6 +38,7 @@ export function NewProduct(props) {
                         URL={newProduct.URL}
                         price={newProduct.price}
                         salePrice={newProduct.salePrice}
+                        productId={newProduct.id}
                       />
                     ) : (
                       <ProductCard
@@ -45,6 +46,7 @@ export function NewProduct(props) {
                         name={newProduct.name}
                         URL={newProduct.URL}
                         price={newProduct.price}
+                        productId={newProduct.id}
                       />
                     )
                   )}

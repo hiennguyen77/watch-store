@@ -27,6 +27,7 @@ export function HotProduct(props) {
                     URL={hotProduct.URL}
                     price={hotProduct.price}
                     salePrice={hotProduct.salePrice}
+                    productId={hotProduct.id}
                   />
                 </div>
               ) : (
@@ -35,6 +36,7 @@ export function HotProduct(props) {
                     name={hotProduct.name}
                     URL={hotProduct.URL}
                     price={hotProduct.price}
+                    productId={hotProduct.id}
                   />
                 </div>
               )

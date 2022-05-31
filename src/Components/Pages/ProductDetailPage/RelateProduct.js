@@ -28,6 +28,7 @@ export const RelateProduct = (props) => {
                 name={product.name}
                 URL={product.URL}
                 price={product.price}
+                productId={product.id}
               />
             </div>
           ))}

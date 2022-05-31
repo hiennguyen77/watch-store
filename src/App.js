@@ -5,18 +5,12 @@ import { publicRoutes } from "./Routes/index";
 
 import { useContext } from "react";
 import { productContext } from "./Contexts/ProductContext";
+import { cartContext } from "./Contexts/CartContext";
 
 function App() {
-  const {
-    products,
-    productType,
-    typeName,
-    loading,
-    setLoading,
-    productDetailPrice,
-    productDetailImg,
-    productDetailName,
-  } = useContext(productContext);
+  const { products } = useContext(productContext);
+  const { productDetailPrice, productDetailImg, productDetailName } =
+    useContext(cartContext);
 
   return (
     <>

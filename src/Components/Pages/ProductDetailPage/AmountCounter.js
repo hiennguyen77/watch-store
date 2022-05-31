@@ -1,11 +1,10 @@
 import "./AmountCounter.scss";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
-import { useContext } from "react";
-import { productContext } from "../../../Contexts/ProductContext";
 
-export const AmountCounter = () => {
-  const { amount, setAmount } = useContext(productContext);
-  console.log(amount);
+export const AmountCounter = (props) => {
+  const { amount, setAmount } = props;
+  // const { amount, setAmount } = useContext(cartContext);
+  // console.log(amount);
   return (
     <>
       <div className="counter_wrap">

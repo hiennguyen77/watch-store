@@ -9,13 +9,9 @@ const ProductContextProvider = ({ children }) => {
   const [filterProducts, setFilterProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [typeName, setTypeName] = useState("Tất cả");
-  const [productDetailName, setProductDetailName] = useState("");
-  const [productDetailPrice, setProductDetailPrice] = useState();
-  const [productDetailImg, setProductDetailImg] = useState("");
+
   const [currentPage, setCurrentPage] = useState(1);
   const [productPerPage, setProductPerPage] = useState(12);
-  const [sortValue, setSortValue] = useState();
-  const [amount, setAmount] = useState(1);
 
   useEffect(() => {
     const getProduct = async () => {
@@ -41,17 +37,9 @@ const ProductContextProvider = ({ children }) => {
     setTypeName(typeName);
   };
 
-  const handleProductDetail = (URL, name, price) => {
-    setProductDetailImg(URL);
-    setProductDetailName(name);
-    setProductDetailPrice(price);
-  };
-
-  //Context data
-
   const productContextData = {
     handleProduct,
-    handleProductDetail,
+
     products,
     filterProducts,
     setFilterProducts,
@@ -59,16 +47,10 @@ const ProductContextProvider = ({ children }) => {
     setTypeName,
     loading,
     setLoading,
-    productDetailName,
-    productDetailPrice,
-    productDetailImg,
+
     currentPage,
     setCurrentPage,
     productPerPage,
-    sortValue,
-    setSortValue,
-    amount,
-    setAmount,
   };
 
   //return Provider

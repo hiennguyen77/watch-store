@@ -6,32 +6,41 @@ import { Idea } from "./Idea";
 import { RelateProduct } from "./RelateProduct";
 import { ProductBtn } from "../../ProductBtn/ProductBtn";
 
-// import { useState, useContext } from "react";
-// import { addCart } from "../../../App";
+import { useContext, useState } from "react";
+import { cartContext } from "../../../Contexts/CartContext";
 
 export const ProductDetail = (props) => {
-  const { products, productDetailName, productDetailPrice, productDetailImg } =
-    props;
+  const [amountDetail, setAmountDetail] = useState(1);
+  const { products } = props;
 
-  // console.log(productDetailName, productDetailPrice, productDetailImg);
+  const { handleAddProductToCart, productDetail } = useContext(cartContext);
+
   return (
     <>
       <div className="productsDetail_wrap">
         <div className="productsDetail_container grid wide">
           <div className="productDetail_pr row sm-gutter">
             <div className="productDetail_left col l-6">
-              <img src={productDetailImg} alt="watch-img" />
+              <img src={productDetail.URL} alt="watch-img" />
             </div>
             <div className="productDetail_right col l-6">
               <div className="productDetail_right-contain">
-                <h1>{productDetailName}</h1>
-                <h2>{productDetailPrice}đ</h2>
+                <h1>{productDetail.name}</h1>
+                <h2>{productDetail.price}đ</h2>
                 <div>
-                  <AmountCounter />
+                  <AmountCounter
+                    amount={amountDetail}
+                    setAmount={setAmountDetail}
+                  />
                 </div>
                 <ProductBtn>
                   <Link to="/cart">
-                    <button className=" product_btn add_product-btn">
+                    <button
+                      onClick={() =>
+                        handleAddProductToCart(productDetail, amountDetail)
+                      }
+                      className=" product_btn add_product-btn"
+                    >
                       Thêm giỏ hàng
                     </button>
                   </Link>

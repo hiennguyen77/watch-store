@@ -44,6 +44,7 @@ function ProductAccessories(props) {
                       URL={productAccessories.URL}
                       price={productAccessories.price}
                       salePrice={productAccessories.salePrice}
+                      productId={productAccessories.id}
                     />
                   ) : (
                     <ProductCard
@@ -51,6 +52,7 @@ function ProductAccessories(props) {
                       name={productAccessories.name}
                       URL={productAccessories.URL}
                       price={productAccessories.price}
+                      productId={productAccessories.id}
                     />
                   )
                 )}

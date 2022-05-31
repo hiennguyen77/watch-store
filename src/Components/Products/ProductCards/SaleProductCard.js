@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { productContext } from "../../../Contexts/ProductContext";
+import { cartContext } from "../../../Contexts/CartContext";
 
 export const SaleProductCard = (props) => {
-  const { handleProductDetail } = useContext(productContext);
-  const { name, URL, price, salePrice } = props;
+  const { setProductDetail } = useContext(cartContext);
+  const { name, URL, price, salePrice, productId } = props;
 
   return (
     <>
       <div
         className="product_card_wrap"
-        onClick={() => handleProductDetail(URL, name, price)}
+        onClick={() => setProductDetail({ URL, name, price, productId })}
       >
         <div className="product_card_container">
           <Link to="/product_detail" className="product_card_link">

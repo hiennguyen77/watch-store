@@ -6,7 +6,7 @@ import { FilterBrand } from "./SideBar/Filters/FilterBrand";
 import { FilterPrice } from "./SideBar/Filters/FilterPrice";
 import { SortProduct } from "./SideBar/Filters/SortProduct";
 import { PaginationPr } from "../../Pagination/Pagination";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Loading } from "../../Loading/Loading";
 import { productContext } from "../../../Contexts/ProductContext";
 
@@ -21,13 +21,11 @@ function ProductPage(props) {
     setCurrentPage,
     currentPage,
     productPerPage,
-    sortValue,
-    setSortValue,
   } = useContext(productContext);
 
   // const [currentPage, setCurrentPage] = useState(1);
   // const [productPerPage, setProductPerPage] = useState(12);
-  // const [sortValue, setSortValue] = useState();
+  const [sortValue, setSortValue] = useState();
 
   //Pagination-Product.
   const indexOfLastPr = currentPage * productPerPage;
@@ -73,6 +71,7 @@ function ProductPage(props) {
                         URL={product.URL}
                         price={product.price}
                         salePrice={product.salePrice}
+                        productId={product.id}
                       />
                     </div>
                   ) : (
@@ -81,6 +80,7 @@ function ProductPage(props) {
                         name={product.name}
                         URL={product.URL}
                         price={product.price}
+                        productId={product.id}
                       />
                     </div>
                   )

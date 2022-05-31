@@ -40,6 +40,7 @@ export function ProductForMen(props) {
                     URL={productForMen.URL}
                     price={productForMen.price}
                     salePrice={productForMen.salePrice}
+                    productId={productForMen.id}
                   />
                 </div>
               ) : (
@@ -48,6 +49,7 @@ export function ProductForMen(props) {
                     name={productForMen.name}
                     URL={productForMen.URL}
                     price={productForMen.price}
+                    productId={productForMen.id}
                   />
                 </div>
               )

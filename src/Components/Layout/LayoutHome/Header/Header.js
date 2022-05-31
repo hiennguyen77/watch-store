@@ -8,8 +8,11 @@ import { BsChevronDown } from "react-icons/bs";
 import { HeaderMenuPr } from "./HeaderMenus/HeaderMenuPr";
 import { HeaderMenuBrand } from "./HeaderMenus/HeaderMenuBrand";
 import "./Header.scss";
+import { cartContext } from "../../../../Contexts/CartContext";
+import { useContext } from "react";
 
 function Header(props) {
+  const { amount } = useContext(cartContext);
   const { headerScroll } = props;
   return (
     <>
@@ -94,7 +97,7 @@ function Header(props) {
                       <AiOutlineShoppingCart />
                     </i>
                   </Link>
-                  <p className="circle">(0)</p>
+                  <p className="circle">({amount})</p>
                 </div>
               </div>
             </div>
