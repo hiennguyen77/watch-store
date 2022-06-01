@@ -5,8 +5,10 @@ import { AmountCounter } from "./AmountCounter";
 import { Idea } from "./Idea";
 import { RelateProduct } from "./RelateProduct";
 import { ProductBtn } from "../../ProductBtn/ProductBtn";
+import { Loading } from "../../Loading/Loading";
 
 import { useContext, useState } from "react";
+
 import { cartContext } from "../../../Contexts/CartContext";
 
 export const ProductDetail = (props) => {

@@ -10,7 +10,7 @@ import { useContext, useState } from "react";
 import { Loading } from "../../Loading/Loading";
 import { productContext } from "../../../Contexts/ProductContext";
 
-function ProductPage(props) {
+function ProductPage() {
   const {
     loading,
     products,
@@ -23,8 +23,6 @@ function ProductPage(props) {
     productPerPage,
   } = useContext(productContext);
 
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [productPerPage, setProductPerPage] = useState(12);
   const [sortValue, setSortValue] = useState();
 
   //Pagination-Product.
