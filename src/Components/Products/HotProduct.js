@@ -29,7 +29,7 @@ export function HotProduct(props) {
           <div className="HotProduct_item row sm-gutter">
             {hotProducts.map((hotProduct, index) =>
               hotProduct.salePrice ? (
-                <div className="col l-3 m-4 c-12 " key={index}>
+                <div className="col l-3 m-4 c-6 " key={index}>
                   <SaleProductCard
                     name={hotProduct.name}
                     URL={hotProduct.URL}
@@ -39,7 +39,7 @@ export function HotProduct(props) {
                   />
                 </div>
               ) : (
-                <div className="col l-3 m-4 c-12 " key={index}>
+                <div className="col l-3 m-4 c-6 " key={index}>
                   <ProductCard
                     name={hotProduct.name}
                     URL={hotProduct.URL}

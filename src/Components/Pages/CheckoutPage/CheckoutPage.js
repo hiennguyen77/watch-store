@@ -12,7 +12,7 @@ import {
 } from "react-icons/md";
 
 export const CheckoutPage = (props) => {
-  const { cartProducts, totalPrice } = useContext(cartContext);
+  const { cartProducts, totalPrice, setCartProducts } = useContext(cartContext);
   return (
     <>
       <div className="checkout_wrap">
@@ -27,7 +27,10 @@ export const CheckoutPage = (props) => {
               </button>
             </Link>
             <Link to="/product">
-              <button className="checkout_btn-next">
+              <button
+                onClick={() => setCartProducts([])}
+                className="checkout_btn-next"
+              >
                 Chọn phương thức thanh toán
                 <i>
                   <MdOutlineKeyboardArrowRight className="checkout_btn_icon" />

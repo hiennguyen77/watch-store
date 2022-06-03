@@ -6,17 +6,17 @@ import { Select, Input } from "antd";
 const { Option } = Select;
 
 export const CheckoutForm = () => {
-  const [value, setValue] = useState(1);
+  const [valueChecked, setValueChecked] = useState(1);
 
-  const onChange = (e) => {
+  const handleChecked = (e) => {
     console.log("radio checked", e.target.value);
-    setValue(e.target.value);
+    setValueChecked(e.target.value);
   };
   return (
     <>
       <div className="form_wrap">
         <div className="form_radio">
-          <Radio.Group onChange={onChange} value={value}>
+          <Radio.Group onChange={handleChecked} value={valueChecked}>
             <Radio value={1}>Anh</Radio>
             <Radio value={2}>Chị</Radio>
           </Radio.Group>

@@ -1,3 +1,4 @@
+import "../../../../Grid/Grid.css";
 import { Link, NavLink } from "react-router-dom";
 import Tippy from "@tippyjs/react/headless";
 import { FaFacebookF, FaGoogle, FaTwitter, FaVimeoV } from "react-icons/fa";
@@ -19,11 +20,11 @@ function Header(props) {
       <div
         class={
           headerScroll
-            ? "header_wrap headerScroll"
+            ? "header_wrap headerScroll "
             : "header_wrap headerDefault"
         }
       >
-        <div className="header_container">
+        <div className="header_container grid wide">
           <div className="header_content_top">
             <div className="social_icon">
               <p>Theo dõi:</p>
