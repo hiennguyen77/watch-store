@@ -244,6 +244,7 @@
     display: flex;
     justify-content: space-between;
     padding: 0 10rem;
+    height: 5rem;
 
     .header_logo_cart {
       display: flex;
@@ -265,7 +266,7 @@
         display: flex;
         position: relative;
         right: -90rem;
-        top: 0.2rem;
+        top: 2.5rem;
         align-items: center;
 
         .header_search {
@@ -283,6 +284,7 @@
         }
 
         .header_cart {
+          margin-left: 1rem;
           a {
             text-decoration: none;
           }
@@ -298,7 +300,7 @@
             color: var(--primary);
             position: relative;
             top: -5.3rem;
-            right: -3.4rem;
+            right: -2.4rem;
           }
         }
       }

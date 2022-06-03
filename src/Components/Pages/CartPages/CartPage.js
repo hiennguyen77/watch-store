@@ -8,11 +8,11 @@ import { Link } from "react-router-dom";
 import { TiArrowBackOutline } from "react-icons/ti";
 
 function CartPage() {
-  const { cartProducts, amount, setAmount, handleDeleteCart } =
+  const { cartProducts, amount, setAmount, handleDeleteCart, handleCheckout } =
     useContext(cartContext);
   console.log(cartProducts);
-  const totalPrice = cartProducts.reduce((total, currentVl) => {
-    return total + parseInt(currentVl.price * currentVl.amount);
+  const totalPrice = cartProducts.reduce((total, currentProduct) => {
+    return total + parseInt(currentProduct.price * currentProduct.amount);
   }, 0);
   console.log(totalPrice);
 
@@ -64,7 +64,10 @@ function CartPage() {
                 </button>
               </Link>
               <Link to="/checkout">
-                <button className=" product_btn checkout_product-btn">
+                <button
+                  onClick={() => handleCheckout(totalPrice)}
+                  className=" product_btn checkout_product-btn"
+                >
                   Thanh toán
                 </button>
               </Link>

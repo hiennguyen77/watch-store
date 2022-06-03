@@ -41,14 +41,9 @@ export const ProductDetail = (props) => {
                       onClick={() =>
                         handleAddProductToCart(productDetail, amountDetail)
                       }
-                      className=" product_btn add_product-btn"
+                      className=" product_btn add_product-btn detail_btn"
                     >
                       Thêm giỏ hàng
-                    </button>
-                  </Link>
-                  <Link to="/checkout">
-                    <button className=" product_btn checkout_product-btn">
-                      Thanh toán
                     </button>
                   </Link>
                 </ProductBtn>

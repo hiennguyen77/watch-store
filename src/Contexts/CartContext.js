@@ -7,6 +7,7 @@ const CartContextProvider = ({ children }) => {
 
   const [productDetail, setProductDetail] = useState([]);
   const [cartProducts, setCartProducts] = useState([]);
+  const [totalPrice, setTotalPrice] = useState();
 
   const handleAddProductToCart = (cartProduct, amountDetail) => {
     const foundIndex = cartProducts.findIndex(
@@ -39,6 +40,10 @@ const CartContextProvider = ({ children }) => {
     //
   };
 
+  const handleCheckout = (totalPrice) => {
+    setTotalPrice(totalPrice);
+  };
+
   const handleDeleteCart = (index) => {
     const newProductCart = [...cartProducts];
     newProductCart.splice(index, 1);
@@ -55,6 +60,8 @@ const CartContextProvider = ({ children }) => {
     productDetail,
     setAmount,
     handleDeleteCart,
+    handleCheckout,
+    totalPrice,
   };
 
   return (

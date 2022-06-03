@@ -14,10 +14,22 @@
         cursor: pointer;
       }
       .checkout_btn-next {
-        margin-left: 22rem;
+        margin-left: 18rem;
+        color: var(--primary);
+      }
+      .checkout_btn-next:hover {
+        color: rgb(0, 195, 255);
       }
       .checkout_btn-back {
         margin-left: 2rem;
+        color: var(--primary);
+      }
+      .checkout_btn-back:hover {
+        color: rgb(0, 195, 255);
+      }
+      .checkout_btn_icon {
+        padding-top: 10px;
+        font-size: 2.5rem;
       }
     }
   }
@@ -31,6 +43,35 @@
 
     h3 {
       margin-bottom: 2rem;
+    }
+  }
+
+  .info_product {
+    display: flex;
+    margin-top: 2rem;
+    // align-items: center;
+
+    img {
+      width: 6rem;
+      height: 6rem;
+    }
+    .info_name_amount {
+      margin-left: 3rem;
+      margin-right: 14rem;
+    }
+  }
+  .total_price {
+    margin-top: 4rem;
+    border-top: 1px solid #dfdfdf;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p {
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+    h4 {
+      color: var(--hover-color);
     }
   }
 }
