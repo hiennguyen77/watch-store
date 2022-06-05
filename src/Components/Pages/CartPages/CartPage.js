@@ -23,7 +23,7 @@ function CartPage() {
           <div className="cartPage_text">
             <h1>Giỏ hàng của bạn</h1>
             <p>Bạn có {amount} sản phẩm trong giỏ hàng của bạn</p>
-            <div className="cartPage_line"></div>
+            {/* <div className="cartPage_line"></div> */}
           </div>
           {cartProducts.map((cartProduct, index) => (
             <div className="cartPage_product" key={index}>
@@ -51,28 +51,39 @@ function CartPage() {
             </div>
           ))}
 
-          <div className="totalPrice">
-            <p>Tổng tiền:</p>
-            <h4>{totalPrice}đ</h4>
-          </div>
-          <div className="cart_btn">
-            <ProductBtn>
-              <Link to="/product">
-                <button className=" product_btn add_product-btn">
-                  <TiArrowBackOutline className="cart_btn_pr" />
-                  Tiếp tục mua hàng
-                </button>
+          {cartProducts.length > 0 ? (
+            <div>
+              <div className="totalPrice">
+                <p>Tổng tiền:</p>
+                <h4>{totalPrice}đ</h4>
+              </div>
+              <div className="cart_btn">
+                <ProductBtn>
+                  <Link to="/product">
+                    <button className=" product_btn add_product-btn">
+                      <TiArrowBackOutline className="cart_btn_pr" />
+                      Tiếp tục mua hàng
+                    </button>
+                  </Link>
+                  <Link to="/checkout">
+                    <button
+                      onClick={() => handleCheckout(totalPrice)}
+                      className=" product_btn checkout_product-btn"
+                    >
+                      Thanh toán
+                    </button>
+                  </Link>
+                </ProductBtn>
+              </div>
+            </div>
+          ) : (
+            <div className="noCart_container">
+              <Link to="/product" className="noCart_link">
+                <h2>Tiếp tục mua sắm</h2>
+                <div className="noCart_line"></div>
               </Link>
-              <Link to="/checkout">
-                <button
-                  onClick={() => handleCheckout(totalPrice)}
-                  className=" product_btn checkout_product-btn"
-                >
-                  Thanh toán
-                </button>
-              </Link>
-            </ProductBtn>
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </>

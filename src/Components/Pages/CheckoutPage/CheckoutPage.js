@@ -41,9 +41,12 @@ export const CheckoutPage = (props) => {
           <div className="checkout_form">
             <h3>Thông tin giao hàng</h3>
             <CheckoutForm />
-
-            <p>SẢN PHẨM ĐÃ MUA</p>
-            {cartProducts.map((product, index) => (
+            {cartProducts.length > 0 ? (
+              <p style={{ padding: "0", marginTop: "2rem" }}>SẢN PHẨM ĐÃ MUA</p>
+            ) : (
+              ""
+            )}
+            {cartProducts?.map((product, index) => (
               <div className="info_product" key={index}>
                 <img src={product.URL} alt="" />
                 <div className="info_name_amount">
@@ -53,10 +56,14 @@ export const CheckoutPage = (props) => {
                 <h4>{product.price}đ</h4>
               </div>
             ))}
-            <div className="total_price">
-              <p>Tổng tiền: </p>
-              <h4>{totalPrice}đ </h4>
-            </div>
+            {cartProducts.length > 0 ? (
+              <div className="total_price">
+                <p>Tổng tiền: </p>
+                <h4>{totalPrice}đ </h4>
+              </div>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </div>
