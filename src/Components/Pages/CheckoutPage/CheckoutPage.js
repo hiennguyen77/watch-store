@@ -48,10 +48,12 @@ export const CheckoutPage = (props) => {
             )}
             {cartProducts?.map((product, index) => (
               <div className="info_product" key={index}>
-                <img src={product.URL} alt="" />
-                <div className="info_name_amount">
-                  <h4>{product.name}</h4>
-                  <p>Số lượng: {product.amount}</p>
+                <div className="info_name_amount_img">
+                  <img src={product.URL} alt="" />
+                  <div className="info_name_amount">
+                    <h4>{product.name}</h4>
+                    <p>Số lượng: {product.amount}</p>
+                  </div>
                 </div>
                 <h4>{product.price}đ</h4>
               </div>

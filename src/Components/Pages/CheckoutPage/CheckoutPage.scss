@@ -49,15 +49,18 @@
   .info_product {
     display: flex;
     margin-top: 2rem;
+    justify-content: space-between;
     // align-items: center;
 
     img {
       width: 6rem;
       height: 6rem;
     }
-    .info_name_amount {
-      margin-left: 3rem;
-      margin-right: 14rem;
+    .info_name_amount_img {
+      display: flex;
+      align-items: center;
+      // margin-left: 3rem;
+      // margin-right: 14rem;
     }
   }
   .total_price {
