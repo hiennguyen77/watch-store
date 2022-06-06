@@ -5,6 +5,8 @@
   user-select: none;
 }
 .ant-checkbox-group {
+  display: flex;
+  flex-direction: column;
   p:hover {
     color: var(--hover-color);
   }
