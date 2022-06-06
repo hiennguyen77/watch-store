@@ -7,7 +7,7 @@ function Footer() {
     <>
       <div className="footer_wrap">
         <div className="footer_container grid">
-          <div className="row">
+          <div className="row no-gutters">
             <div className="col l-3 m-3 c-12">
               <div className="footer_fist">
                 <div className="footer_heading">

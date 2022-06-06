@@ -14,6 +14,8 @@ const paths = {
   cart: "Giỏ hàng",
   product_detail: "Chi tiết sản phẩm",
   checkout: "Thanh toán",
+  login: "Đăng nhập",
+  registration: "Đăng ký",
 };
 
 const BreadCrumb = () => {
