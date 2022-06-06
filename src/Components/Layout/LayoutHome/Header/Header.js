@@ -2,7 +2,7 @@ import "../../../../Grid/Grid.css";
 import { Link, NavLink } from "react-router-dom";
 import Tippy from "@tippyjs/react/headless";
 import { FaFacebookF, FaGoogle, FaTwitter, FaVimeoV } from "react-icons/fa";
-import { FiLogIn, FiUserPlus, FiPhoneCall } from "react-icons/fi";
+import { FiLogIn, FiUserPlus, FiPhoneCall, FiMenu } from "react-icons/fi";
 import { BiSearch } from "react-icons/bi";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BsChevronDown } from "react-icons/bs";
@@ -24,7 +24,7 @@ function Header(props) {
             : "header_wrap headerDefault"
         }
       >
-        <div className="header_container grid wide">
+        <div className="header_container ">
           <div className="header_content_top">
             <div className="social_icon">
               <p>Theo dõi:</p>
@@ -99,6 +99,12 @@ function Header(props) {
                     </i>
                   </Link>
                   <p className="circle">({amount})</p>
+                </div>
+
+                <div className="navigation_menu">
+                  <i className="menu_icon">
+                    <FiMenu />
+                  </i>
                 </div>
               </div>
             </div>

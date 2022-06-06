@@ -1,9 +1,21 @@
+@import "../../../../Responsive/mixin.scss";
+
 .header_wrap.headerDefault {
   background-color: var(--primary);
   height: auto;
   width: 100%;
   z-index: 2;
   user-select: none;
+  padding: 0 3rem;
+  @include responsive_425 {
+    padding: 0 1rem;
+  }
+  @include responsive_375 {
+    padding: 0 1rem;
+  }
+  @include responsive_320 {
+    padding: 0 1rem;
+  }
 
   .header_container {
     // margin: 0 10rem;
@@ -27,12 +39,29 @@
           font-size: 1.3rem;
           font-weight: 300;
           letter-spacing: 0.1rem;
+          @include responsive_425 {
+            display: none;
+          }
+          @include responsive_375 {
+            display: none;
+          }
+          @include responsive_320 {
+            display: none;
+          }
         }
 
         .social_icon_item {
           padding: 1.5rem 1rem 1rem 1rem;
           font-size: 1.3rem;
           color: var(--white-color);
+          @include responsive_375 {
+            font-size: 1.2rem;
+          }
+          @include responsive_320 {
+            font-size: 1.2rem;
+            padding: 1.5rem 0.3rem 0.5rem 0.3rem;
+            margin-right: 0.5rem;
+          }
         }
         .social_icon_item:hover {
           color: var(--hover-color);
@@ -49,6 +78,12 @@
           align-items: center;
           text-decoration: none;
           font-size: 1.4rem;
+          @include responsive_375 {
+            font-size: 1.2rem;
+          }
+          @include responsive_320 {
+            font-size: 1.2rem;
+          }
 
           i {
             padding-right: 0.5rem;
@@ -66,6 +101,12 @@
           align-items: center;
           text-decoration: none;
           font-size: 1.4rem;
+          @include responsive_375 {
+            font-size: 1.2rem;
+          }
+          @include responsive_320 {
+            font-size: 1.2rem;
+          }
 
           i {
             padding-right: 0.5rem;
@@ -84,18 +125,38 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 1rem 0;
     .header_logo_cart {
       display: flex;
       align-items: center;
       justify-content: space-between;
 
       .header_logo {
-        padding-left: 10rem;
-        margin-right: 10rem;
+        @include responsive_425 {
+          margin-left: 5rem;
+        }
+        @include responsive_375 {
+          margin-left: 6rem;
+        }
+        @include responsive_320 {
+          margin-left: 5.5rem;
+        }
         h1 {
           font-size: 5rem;
           font-weight: 500;
           color: var(--white-color);
+          @include responsive_768 {
+            font-size: 4rem;
+          }
+          @include responsive_425 {
+            font-size: 3rem;
+          }
+          @include responsive_375 {
+            font-size: 2.5rem;
+          }
+          @include responsive_320 {
+            font-size: 2.2rem;
+          }
         }
         a {
           text-decoration: none;
@@ -112,14 +173,41 @@
           color: var(--white-color);
           padding-top: 1.4rem;
           padding-right: 1.4rem;
+          @include responsive_425 {
+            font-size: 1.6rem;
+          }
+          @include responsive_375 {
+            font-size: 1.4rem;
+          }
+          @include responsive_320 {
+            font-size: 1.2rem;
+          }
         }
         p {
           color: var(--white-color);
           line-height: 0.8;
+          @include responsive_425 {
+            display: none;
+          }
+          @include responsive_375 {
+            display: none;
+          }
+          @include responsive_320 {
+            display: none;
+          }
         }
         h6 {
           color: var(--white-color);
           font-size: 1.5rem;
+          @include responsive_425 {
+            display: none;
+          }
+          @include responsive_375 {
+            display: none;
+          }
+          @include responsive_320 {
+            display: none;
+          }
         }
         h6:hover {
           color: var(--hover-color);
@@ -128,9 +216,25 @@
 
       .search_and_cart_container {
         display: flex;
-        align-items: center;
+        height: 5rem;
+        // @include responsive_425 {
+        //   margin-bottom: 8px;
+        // }
+
         .header_search {
-          margin-top: 1rem;
+          margin-top: 12px;
+          @include responsive_768 {
+            display: none;
+          }
+          @include responsive_425 {
+            display: none;
+          }
+          @include responsive_375 {
+            display: none;
+          }
+          @include responsive_320 {
+            display: none;
+          }
           .icon_search {
             color: var(--white-color);
           }
@@ -142,24 +246,75 @@
           }
         }
         .header_cart {
-          margin: 5rem 2.5rem 1rem 2rem;
+          margin-left: 2rem;
           padding-top: 1rem;
+          display: flex;
+
           a {
             text-decoration: none;
           }
           i {
             font-size: 3rem;
             color: var(--white-color);
+            @include responsive_425 {
+              font-size: 2.5rem;
+            }
+            @include responsive_375 {
+              font-size: 2.2rem;
+            }
+            @include responsive_320 {
+              font-size: 2rem;
+            }
           }
           i:hover {
             color: var(--hover-color);
           }
           .circle {
             font-size: 2rem;
+            font-weight: 300;
+            @include responsive_425 {
+              font-size: 1.8rem;
+            }
+            @include responsive_375 {
+              font-size: 1.5rem;
+            }
+            @include responsive_320 {
+              font-size: 1.3rem;
+            }
             color: var(--white-color);
-            position: relative;
-            top: -5.3rem;
-            right: -3.4rem;
+            padding: 0;
+            line-height: 2;
+          }
+        }
+
+        .navigation_menu {
+          margin-top: 1rem;
+          margin-left: 2rem;
+          display: none;
+          .menu_icon {
+            color: var(--white-color);
+            font-size: 3rem;
+            @include responsive_425 {
+              font-size: 2.5rem;
+            }
+            @include responsive_375 {
+              font-size: 2.2rem;
+            }
+            @include responsive_320 {
+              font-size: 2rem;
+            }
+          }
+          @include responsive_768 {
+            display: block;
+          }
+          @include responsive_425 {
+            display: block;
+          }
+          @include responsive_375 {
+            display: block;
+          }
+          @include responsive_320 {
+            display: block;
           }
         }
       }
@@ -168,13 +323,29 @@
 
     .Navigation_container {
       display: flex;
-      margin: 0 10rem;
+      // margin: 0 0rem;
       justify-content: center;
       align-items: center;
+      @include responsive_768 {
+        display: none;
+      }
+      @include responsive_425 {
+        display: none;
+      }
+      @include responsive_375 {
+        display: none;
+      }
+      @include responsive_320 {
+        display: none;
+      }
 
       .Navigation_item {
-        padding: 1.4rem 4rem;
+        padding: 1.4rem 0rem;
+        margin: 0 4rem;
         position: relative;
+        @include responsive_992 {
+          margin: 0 3rem;
+        }
         .Navigation_link {
           color: var(--white-color);
           font-size: 1.4rem;
@@ -212,7 +383,19 @@
           height: 2rem;
           background-color: var(--primary);
           top: 34px;
-          right: 34px;
+          right: -22px;
+          @include responsive_1200 {
+            width: 10rem;
+            right: -10px;
+          }
+          @include responsive_1024 {
+            width: 10rem;
+            right: -10px;
+          }
+          @include responsive_992 {
+            width: 10rem;
+            right: -5px;
+          }
           // display: none;
         }
       }
@@ -233,6 +416,16 @@
   animation-name: headerAnimation;
   animation-duration: 1s;
   user-select: none;
+  padding: 0 3rem;
+  @include responsive_425 {
+    padding: 0 1rem;
+  }
+  @include responsive_375 {
+    padding: 0 1rem;
+  }
+  @include responsive_320 {
+    padding: 0 1rem;
+  }
 
   .header_content_top {
     display: none;
@@ -241,21 +434,33 @@
     display: none;
   }
   .header_content_bottom {
-    display: flex;
-    justify-content: space-between;
-    // padding: 0 10rem;
+    justify-content: space-around;
+    align-items: center;
+
     height: 5rem;
 
     .header_logo_cart {
       display: flex;
+      justify-content: space-between;
+      height: 5rem;
 
       .header_logo {
-        // margin-top: 1.5rem;
-
         h1 {
           font-size: 3rem;
           font-weight: 500;
           color: var(--primary);
+          @include responsive_425 {
+            font-size: 2rem;
+            padding-top: 7px;
+          }
+          @include responsive_375 {
+            font-size: 1.8rem;
+            padding-top: 10px;
+          }
+          @include responsive_320 {
+            font-size: 1.6rem;
+            padding-top: 12px;
+          }
         }
         a {
           text-decoration: none;
@@ -264,18 +469,33 @@
 
       .search_and_cart_container {
         display: flex;
-        position: relative;
-        right: -90rem;
-        top: 2.5rem;
-        align-items: center;
+
+        margin-top: 4px;
 
         .header_search {
-          margin-bottom: 4rem;
-          margin-left: 2.5rem;
+          margin-top: 1px;
+          @include responsive_425 {
+            margin-top: 5px;
+          }
+          @include responsive_375 {
+            margin-top: 8px;
+          }
+          @include responsive_320 {
+            margin-top: 10px;
+          }
           .icon_search {
             color: var(--primary);
 
             i {
+              @include responsive_425 {
+                font-size: 2.5rem;
+              }
+              @include responsive_375 {
+                font-size: 2.2rem;
+              }
+              @include responsive_320 {
+                font-size: 2rem;
+              }
               font-size: 3rem;
             }
           }
@@ -285,11 +505,33 @@
         }
 
         .header_cart {
+          display: flex;
           margin-left: 2rem;
+          @include responsive_425 {
+            margin-top: 5px;
+          }
+          @include responsive_375 {
+            margin-top: 8px;
+            margin-left: 1.5rem;
+          }
+          @include responsive_320 {
+            margin-top: 10px;
+            margin-left: 1.5rem;
+          }
+
           a {
             text-decoration: none;
           }
           i {
+            @include responsive_425 {
+              font-size: 2.5rem;
+            }
+            @include responsive_375 {
+              font-size: 2.2rem;
+            }
+            @include responsive_320 {
+              font-size: 2rem;
+            }
             font-size: 3rem;
             color: var(--primary);
           }
@@ -297,11 +539,64 @@
             color: var(--hover-color);
           }
           .circle {
+            padding: 0;
             font-size: 2rem;
+            font-weight: 300;
             color: var(--primary);
-            position: relative;
-            top: -5.3rem;
-            right: -2.4rem;
+            margin-top: 8px;
+            @include responsive_425 {
+              font-size: 1.8rem;
+            }
+            @include responsive_375 {
+              font-size: 1.5rem;
+              margin-top: 6px;
+            }
+            @include responsive_320 {
+              font-size: 1.3rem;
+              margin-top: 6px;
+            }
+          }
+        }
+
+        .navigation_menu {
+          margin-top: 1rem;
+          margin-left: 2rem;
+          display: none;
+
+          .menu_icon {
+            color: var(--white-color);
+            font-size: 3rem;
+            @include responsive_768 {
+              color: var(--primary);
+            }
+            @include responsive_425 {
+              color: var(--primary);
+              font-size: 2.5rem;
+            }
+            @include responsive_375 {
+              color: var(--primary);
+              font-size: 2.2rem;
+            }
+            @include responsive_320 {
+              color: var(--primary);
+              font-size: 2rem;
+            }
+          }
+          @include responsive_768 {
+            display: block;
+            margin: 0 0 0 2rem;
+          }
+          @include responsive_425 {
+            display: block;
+            margin: 5px 0 0 2rem;
+          }
+          @include responsive_375 {
+            display: block;
+            margin: 7px 0 0 1.5rem;
+          }
+          @include responsive_320 {
+            display: block;
+            margin: 10px 0 0 1.5rem;
           }
         }
       }
@@ -309,20 +604,52 @@
   }
 
   .header_navigation_wrap {
-    display: flex;
+    @include responsive_768 {
+      display: none;
+    }
+    @include responsive_425 {
+      display: none;
+    }
+    @include responsive_375 {
+      display: none;
+    }
+    @include responsive_320 {
+      display: none;
+    }
 
     .Navigation_wrap {
-      position: relative;
-      right: 17rem;
+      position: absolute;
+      top: 0;
+      right: 20%;
+      left: 20%;
+
+      @include responsive_1024 {
+        right: 16rem;
+      }
+      @include responsive_992 {
+        right: 13.5rem;
+      }
 
       .Navigation_container {
         display: flex;
         align-items: center;
+        justify-content: center;
         // margin-top: 1.8rem;
 
         .Navigation_item {
-          padding: 1.4rem 3rem;
+          padding: 1.4rem 0rem;
+
+          @include responsive_1200 {
+            margin: 0 2.5rem;
+          }
+          @include responsive_1024 {
+            margin: 0 2.1rem;
+          }
+          @include responsive_992 {
+            margin: 0 2rem;
+          }
           .Navigation_link {
+            position: relative;
             color: var(--primary);
             font-size: 1.4rem;
             font-weight: 500;
@@ -357,6 +684,21 @@
             background-color: var(--white-color);
             top: 34px;
             right: 497px;
+            @include responsive_1200 {
+              width: 9rem;
+              right: -3px;
+              top: 14px;
+            }
+            @include responsive_1024 {
+              width: 9rem;
+              right: -3px;
+              top: 14px;
+            }
+            @include responsive_992 {
+              width: 9rem;
+              right: -3px;
+              top: 14px;
+            }
             // display: none;
           }
 
@@ -368,6 +710,21 @@
             background-color: var(--white-color);
             top: 34px;
             right: 352px;
+            @include responsive_1200 {
+              width: 9rem;
+              right: -4px;
+              top: 14px;
+            }
+            @include responsive_1024 {
+              width: 9rem;
+              right: -4px;
+              top: 14px;
+            }
+            @include responsive_992 {
+              width: 9rem;
+              right: -4px;
+              top: 14px;
+            }
             // display: none;
           }
         }

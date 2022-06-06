@@ -6,11 +6,11 @@ export function HotProduct(props) {
   const { products } = props;
   const hotProducts = products.slice(4, 12);
 
-  const type = [
-    { name: "Đồng hồ nam", item: "male" },
-    { name: "Đồng hồ nữ", item: "female" },
-    { name: "Phụ kiện", item: "accessory" },
-  ];
+  // const type = [
+  //   { name: "Đồng hồ nam", item: "male" },
+  //   { name: "Đồng hồ nữ", item: "female" },
+  //   { name: "Phụ kiện", item: "accessory" },
+  // ];
 
   return (
     <>
@@ -18,13 +18,13 @@ export function HotProduct(props) {
         <div className="HotProduct_heading">
           <h1 className="HotProduct_name">Sản phẩm bán chạy</h1>
         </div>
-        <div className="HotProduct_type">
+        {/* <div className="HotProduct_type">
           {type.map((type, index) => (
             <button className="hotProduct_btn" key={index}>
               {type.name}
             </button>
           ))}
-        </div>
+        </div> */}
         <div className="HotProduct_container ">
           <div className="HotProduct_item row sm-gutter">
             {hotProducts.map((hotProduct, index) =>
