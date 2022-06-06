@@ -80,7 +80,7 @@ function Header(props) {
               </div>
               <div className="header_logo">
                 <a href="/">
-                  <h1>Wacth Store</h1>
+                  <h1>Watch Store</h1>
                 </a>
               </div>
               <div className="search_and_cart_container">
