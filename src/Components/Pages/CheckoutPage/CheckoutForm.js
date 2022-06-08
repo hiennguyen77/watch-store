@@ -5,11 +5,6 @@ import "antd/dist/antd.css";
 import Select from "react-select";
 import { getProvinces, getDistricts, getWards } from "./CheckoutFormUtils";
 import "./CheckoutForm.scss";
-// const options = [
-//   { value: "chocolate", label: "Chocolate" },
-//   { value: "strawberry", label: "Strawberry" },
-//   { value: "vanilla", label: "Vanilla" },
-// ];
 
 export const CheckoutForm = () => {
   const [valueChecked, setValueChecked] = useState(1);

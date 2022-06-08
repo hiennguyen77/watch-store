@@ -10,15 +10,19 @@ import { Loading } from "../../Loading/Loading";
 import { useContext, useState } from "react";
 
 import { cartContext } from "../../../Contexts/CartContext";
+import { productContext } from "../../../Contexts/ProductContext";
 
 export const ProductDetail = (props) => {
   const [amountDetail, setAmountDetail] = useState(1);
   const { products } = props;
-
+  const { loading } = useContext(productContext);
   const { handleAddProductToCart, productDetail } = useContext(cartContext);
+  console.log(productDetail);
 
   return (
     <>
+      {loading && <Loading />}
+
       <div className="productsDetail_wrap">
         <div className="productsDetail_container grid wide">
           <div className="productDetail_pr row sm-gutter">
