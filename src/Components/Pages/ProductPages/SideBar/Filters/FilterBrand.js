@@ -27,7 +27,7 @@ export const FilterBrand = (props) => {
         <h1 className="filterBrand_heading">Nhãn hiệu -</h1>
         <div className="brand_name">
           <Checkbox.Group onChange={onChange} style={{ width: "100%" }}>
-            <Checkbox value="brand_1" style={{ marginLeft: "7px" }}>
+            <Checkbox value="brand_1" style={{ marginLeft: "8px" }}>
               <p>OMEGA</p>
             </Checkbox>
             <Checkbox value="brand_2">

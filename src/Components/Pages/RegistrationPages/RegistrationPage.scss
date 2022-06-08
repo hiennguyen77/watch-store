@@ -1,0 +1,69 @@
+.registration_wrap {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  margin-top: 4rem;
+
+  .register_heading {
+    font-size: 4rem;
+    font-weight: 400;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 50rem;
+    margin: 3rem 0 1rem 0;
+
+    input {
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 1.2rem 0 1.2rem 1rem;
+      background-color: #dfdffd;
+      border: none;
+      outline: none;
+    }
+
+    .register_btn {
+      width: 100%;
+      margin-top: 4rem;
+      padding-top: 1.2rem;
+      padding-bottom: 1.2rem;
+      cursor: pointer;
+      color: #fff;
+      background-color: #1c77ff;
+      border: 1px solid #1c77ff;
+      font-size: 2rem;
+      font-weight: 300;
+      margin-bottom: 1rem;
+      transition: all 0.3s linear;
+    }
+    .register_btn:hover {
+      background-color: #fff;
+      color: #1c77ff;
+    }
+  }
+
+  .register_back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6rem;
+
+    p {
+      color: var(--primary);
+      font-size: 1.6rem;
+
+      .back_icon {
+        font-size: 1.5rem;
+        padding-top: 2px;
+      }
+    }
+  }
+  .register_back:hover p {
+    color: #1c77ff;
+  }
+}

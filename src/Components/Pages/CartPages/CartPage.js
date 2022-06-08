@@ -10,11 +10,10 @@ import { TiArrowBackOutline } from "react-icons/ti";
 function CartPage() {
   const { cartProducts, amount, setAmount, handleDeleteCart, handleCheckout } =
     useContext(cartContext);
-  console.log(cartProducts);
+
   const totalPrice = cartProducts.reduce((total, currentProduct) => {
     return total + parseInt(currentProduct.price * currentProduct.amount);
   }, 0);
-  console.log(totalPrice);
 
   return (
     <>

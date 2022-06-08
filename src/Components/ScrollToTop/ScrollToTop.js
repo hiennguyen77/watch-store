@@ -10,3 +10,4 @@ export default function ScrollToTop() {
 
   return null;
 }
+//Scroll to the top of the page after render

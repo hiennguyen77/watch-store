@@ -3,8 +3,7 @@ import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
 export const AmountCounter = (props) => {
   const { amount, setAmount } = props;
-  // const { amount, setAmount } = useContext(cartContext);
-  // console.log(amount);
+
   return (
     <>
       <div className="counter_wrap">
