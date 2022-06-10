@@ -10,7 +10,7 @@ export const SortProduct = (props) => {
       <div className="sortProduct_wrap">
         <div className="sort_container">
           <div className="sortproduct_screen">
-            <p>-- Lọc sản phẩm --</p>
+            <p>-- Sắp xếp --</p>
           </div>
           <div className="sortProduct_icon">
             <i>

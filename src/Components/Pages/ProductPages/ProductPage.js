@@ -9,6 +9,7 @@ import { PaginationPr } from "../../Pagination/Pagination";
 import { useContext, useState } from "react";
 import { Loading } from "../../Loading/Loading";
 import { productContext } from "../../../Contexts/ProductContext";
+import { BsChevronDown } from "react-icons/bs";
 
 function ProductPage() {
   const {
@@ -24,6 +25,7 @@ function ProductPage() {
   } = useContext(productContext);
 
   const [sortValue, setSortValue] = useState();
+  const [openFilter, setOpenFilter] = useState(false);
 
   //Pagination-Product.
   const indexOfLastPr = currentPage * productPerPage;
@@ -37,16 +39,42 @@ function ProductPage() {
         <div className="productPage_heading">
           <h1 className="productPage_heading_content">{typeName}</h1>
         </div>
-        <SortProduct
-          allProducts={products}
-          setFilterProducts={setFilterProducts}
-          setSortValue={setSortValue}
-          sortValue={sortValue}
-          setTypeName={setTypeName}
-        />
-        <div className="productPage_container grid wide">
-          <div className="productPage_body row no-gutters">
-            <div className="col l-2 filter_Product">
+        <div className="product_sort">
+          <SortProduct
+            allProducts={products}
+            setFilterProducts={setFilterProducts}
+            setSortValue={setSortValue}
+            sortValue={sortValue}
+            setTypeName={setTypeName}
+          />
+        </div>
+        <div className="productPage_container">
+          <div className="productPage_body">
+            <div
+              onClick={() => setOpenFilter(!openFilter)}
+              className="filter_btn"
+            >
+              <p>
+                -- Bộ lọc sản phẩm --
+                <BsChevronDown className="filter_btn_icon" />
+              </p>
+            </div>
+            {openFilter && (
+              <div className=" filter_Product">
+                <FilterBrand
+                  allProducts={products}
+                  setFilterProducts={setFilterProducts}
+                  setTypeName={setTypeName}
+                />
+
+                <FilterPrice
+                  allProducts={products}
+                  setFilterProducts={setFilterProducts}
+                  setTypeName={setTypeName}
+                />
+              </div>
+            )}
+            <div className=" filter_Product_medium">
               <FilterBrand
                 allProducts={products}
                 setFilterProducts={setFilterProducts}
@@ -59,11 +87,16 @@ function ProductPage() {
                 setTypeName={setTypeName}
               />
             </div>
-            <div className="col l-10">
-              <div className="productPage_product row no-gutters">
+
+            <div className="productPage_product grid ">
+              <div className="productPage_row row sm-gutter ">
                 {currentPr.map((product, index) =>
                   product.salePrice ? (
-                    <div className="col l-3 m-3 c-12" key={index}>
+                    <div
+                      style={{ display: "flex", justifyContent: "center" }}
+                      className="productPage_item col l-3 m-4 c-6"
+                      key={index}
+                    >
                       <SaleProductCard
                         name={product.name}
                         URL={product.URL}
@@ -73,7 +106,11 @@ function ProductPage() {
                       />
                     </div>
                   ) : (
-                    <div className="col l-3 m-3 c-12" key={index}>
+                    <div
+                      style={{ display: "flex", justifyContent: "center" }}
+                      className="productPage_item col l-3 m-4 c-6"
+                      key={index}
+                    >
                       <ProductCard
                         name={product.name}
                         URL={product.URL}

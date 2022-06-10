@@ -1,17 +1,110 @@
+@import "../../../Responsive/mixin.scss";
+
 .productPage_wrap {
   user-select: none;
+}
+.productPage_body {
+  display: flex;
+}
+.productPage_product {
+  width: calc(100% - 250px);
+  @include responsive_768 {
+    width: 100%;
+  }
+  @include responsive_425 {
+    width: 100%;
+    margin-top: 6rem;
+  }
 }
 
 .productPage_heading {
   text-align: center;
   margin-top: 3rem;
+  margin-bottom: 4rem;
   .productPage_heading_content {
+    display: inline-block;
+    line-height: 1;
   }
 }
+.product_sort {
+  position: absolute;
+  right: 16px;
+  top: 29rem;
+  @include responsive_768 {
+    top: 21rem;
+    right: 7px;
+  }
+  @include responsive_425 {
+    top: 27rem;
+    right: 3px;
+  }
+  // margin-right: 3rem;
+  // margin-left: 38rem;
+}
 
+.filter_btn {
+  display: none;
+  width: 20rem;
+  height: 4rem;
+  position: absolute;
+  border: 1px solid #c9c9c9;
+  border-radius: 4px;
+  cursor: pointer;
+  P {
+    line-height: 4rem;
+    margin-left: 1rem;
+    font-size: 1.6rem;
+    .filter_btn_icon {
+      margin-left: 2rem;
+    }
+  }
+  @include responsive_768 {
+    display: block;
+    top: 211px;
+    left: 15px;
+  }
+  @include responsive_425 {
+    display: block;
+    top: 270px;
+    left: 6px;
+  }
+}
 .filter_Product {
+  width: 250px;
   position: sticky;
   top: 3em;
   margin-top: 3rem;
   align-self: flex-start;
+  @include responsive_768 {
+    position: absolute;
+    background-color: var(--white-color);
+    border: none;
+    border-radius: 4px;
+    top: 221px;
+    left: 14px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  @include responsive_425 {
+    position: absolute;
+    background-color: var(--white-color);
+    border: none;
+    border-radius: 4px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    top: 280px;
+    left: 5px;
+  }
+}
+.filter_Product_medium {
+  width: 250px;
+  position: sticky;
+  top: 3em;
+  margin-top: 3rem;
+  align-self: flex-start;
+  @include responsive_768 {
+    display: none;
+  }
+  @include responsive_425 {
+    display: none;
+  }
 }

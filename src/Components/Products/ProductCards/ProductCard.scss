@@ -1,9 +1,28 @@
+@import "../../../Responsive/mixin.scss";
+
 .product_card_wrap {
   user-select: none;
-  width: 250px;
+  width: 230px;
   height: 300px;
   margin: 2rem 0;
   border-radius: 6px;
+
+  // @include responsive_1200 {
+  //   margin: 3rem 0;
+  // }
+  // @include responsive_1024 {
+  //   margin: 5rem 0;
+  // }
+  // @include responsive_992 {
+  //   margin: 5rem 0;
+  // }
+  // @include responsive_768 {
+  //   margin: 1rem 0;
+  // }
+  @include responsive_425 {
+    width: 208px;
+    margin: 0.3rem 0;
+  }
 }
 .product_card_container {
   display: flex;
@@ -25,12 +44,20 @@
   font-size: 1.6rem;
   text-align: center;
   opacity: 1;
+
+  //stack over
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .product_card_img {
   object-fit: scale-down;
   height: 100%;
   width: 218px;
+  @include responsive_425 {
+    width: 205px;
+  }
 }
 .product_card_price {
   display: flex;

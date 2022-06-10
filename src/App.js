@@ -2,7 +2,6 @@ import { Fragment } from "react";
 import { Routes, Route } from "react-router-dom";
 import LayoutHome from "./Components/Layout/LayoutHome/LayoutHome";
 import { publicRoutes } from "./Routes/index";
-
 import { useContext } from "react";
 import { productContext } from "./Contexts/ProductContext";
 import { cartContext } from "./Contexts/CartContext";

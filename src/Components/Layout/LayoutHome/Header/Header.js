@@ -11,7 +11,7 @@ import { HeaderMenuBrand } from "./HeaderMenus/HeaderMenuBrand";
 import "./Header.scss";
 import { cartContext } from "../../../../Contexts/CartContext";
 import { useContext } from "react";
-
+// import { MenuSidebar } from "./MenuSidebar/MenuSidebar";
 function Header(props) {
   const { amount } = useContext(cartContext);
   const { headerScroll } = props;
@@ -84,7 +84,7 @@ function Header(props) {
                 </a>
               </div>
               <div className="search_and_cart_container">
-                <div className="header_search">
+                <div title="Tìm kiếm" className="header_search">
                   <Link to="/search" className="icon_search">
                     <i>
                       <BiSearch />
@@ -92,7 +92,7 @@ function Header(props) {
                   </Link>
                 </div>
 
-                <div className="header_cart">
+                <div title="Giỏ hàng" className="header_cart">
                   <Link to="/cart">
                     <i>
                       <AiOutlineShoppingCart />
@@ -105,6 +105,8 @@ function Header(props) {
                   <i className="menu_icon">
                     <FiMenu />
                   </i>
+
+                  {/* <MenuSidebar /> */}
                 </div>
               </div>
             </div>

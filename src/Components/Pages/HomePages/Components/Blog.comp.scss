@@ -1,3 +1,4 @@
+@import "../../../../Responsive/mixin.scss";
 .blogComp_wrap {
   user-select: none;
 }
@@ -21,6 +22,12 @@
   border-radius: 5px;
   width: 280px;
   height: 100%;
+  @include responsive_768 {
+    width: 250px;
+  }
+  @include responsive_425 {
+    width: 210px;
+  }
 }
 .blogComp_img {
   object-fit: cover;

@@ -1,5 +1,9 @@
+@import "../../../Responsive/mixin.scss";
 .productForMen_wrap {
   user-select: none;
+  @include responsive_1024 {
+    margin-left: -3px;
+  }
 }
 .productForMen_name {
   font-size: 3rem;
@@ -20,8 +24,4 @@
 }
 .productForMen_item {
   margin-bottom: 2rem;
-}
-
-.productForMen_row {
-  margin-left: 2.6rem;
 }

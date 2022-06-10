@@ -24,6 +24,25 @@ function ProductAccessories(props) {
     autoplay: true,
     autoplaySpeed: 2000,
     pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+          autoplay: false,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 2,
+          autoplay: false,
+          // arrows: true,
+          dots: true,
+        },
+      },
+    ],
   };
 
   return (
@@ -32,9 +51,9 @@ function ProductAccessories(props) {
         <div className="productAccessories_heading">
           <h1 className="productAccessories_name">Phụ kiện đồng hồ</h1>
         </div>
-        <div className="productAccessories_container grid wide">
-          <div className="productAccessories_item row sm-gutter ">
-            <div className="col l-12 m-12 c-0">
+        <div className="productAccessories_container grid ">
+          <div className="productAccessories_item row ">
+            <div className="col l-12 m-12 c-12">
               <Slider {...settings}>
                 {accessoryPr.map((productAccessories, index) =>
                   productAccessories.salePrice ? (

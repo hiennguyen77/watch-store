@@ -1,3 +1,13 @@
+.filterPrice_wrap {
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.filterPriceBody {
+  display: flex;
+  flex-direction: column;
+}
+
 .filterPrice_heading {
   font-weight: 400;
   color: var(--hover-color);

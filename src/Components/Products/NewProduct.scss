@@ -1,8 +1,24 @@
+@import "../../Responsive/mixin.scss";
+
 .new_product_wrap {
   user-select: none;
+
+  @include responsive_1200 {
+    .new_product_container {
+      margin-left: 0;
+    }
+  }
+  @include responsive_1024 {
+    margin-left: 0;
+    .new_product_container {
+      margin-left: 5px;
+    }
+  }
 }
 .new_product_body {
-  margin-left: 3rem;
+  @include responsive_992 {
+    padding-left: 0;
+  }
 }
 
 .heading_name {

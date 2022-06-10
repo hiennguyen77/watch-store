@@ -9,7 +9,7 @@ function Footer() {
       <div className="footer_wrap">
         <div className="footer_container grid">
           <div className="row no-gutters">
-            <div className="col l-3 m-3 c-12">
+            <div className="col l-3 m-4 c-6">
               <div className="footer_fist">
                 <div className="footer_heading">
                   <h1>CHÍNH SÁCH PHÁP LÝ</h1>
@@ -50,7 +50,7 @@ function Footer() {
               </div>
             </div>
 
-            <div className="col l-3 m-3 c-12">
+            <div className="col l-3 m-4 c-6">
               <div className="footer_fist">
                 <div className="footer_heading">
                   <h1>DANH MỤC</h1>
@@ -90,7 +90,7 @@ function Footer() {
               </div>
             </div>
 
-            <div className="col l-3 m-3 c-12">
+            <div className="col l-3 m-4 c-6">
               <div className="footer_fist">
                 <div className="footer_heading">
                   <h1>ĐĂNG KÝ NHẬN THÔNG TIN</h1>
@@ -109,7 +109,7 @@ function Footer() {
               </div>
             </div>
 
-            <div className="col l-3 m-3 c-12">
+            <div className="col l-3 m-4 c-6">
               <div className="footer_fist">
                 <div className="footer_heading">
                   <h1>FANPAGE</h1>

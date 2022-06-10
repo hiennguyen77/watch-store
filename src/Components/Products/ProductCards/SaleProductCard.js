@@ -17,7 +17,9 @@ export const SaleProductCard = (props) => {
             <img className="product_card_img" src={URL} alt="" />
           </Link>
           <div className="product_card_price">
-            <h6 className="product_card_name">{name}</h6>
+            <h6 title={name} className="product_card_name">
+              {name}
+            </h6>
             <div style={{ display: "flex", alignItems: "center" }}>
               <h4>{salePrice}đ</h4>
               <p>{price}đ</p>

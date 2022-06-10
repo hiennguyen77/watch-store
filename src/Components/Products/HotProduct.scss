@@ -1,6 +1,26 @@
+@import "../../Responsive/mixin.scss";
 .HotProduct_wrap {
   margin-left: 3.5rem;
   user-select: none;
+  @include responsive_1200 {
+    margin-left: 0;
+  }
+  @include responsive_1024 {
+    margin-left: -2px;
+  }
+  @include responsive_992 {
+    margin-left: 0;
+  }
+  @include responsive_768 {
+    margin-left: 0;
+  }
+  @include responsive_425 {
+    margin-left: 0;
+  }
+}
+
+.HotProduct_item {
+  margin-right: 2rem;
 }
 .HotProduct_name {
   font-size: 3rem;

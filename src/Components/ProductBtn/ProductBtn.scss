@@ -9,20 +9,25 @@
     width: 25rem;
     border: 1px solid var(--hover-color);
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 300;
     border-radius: 3px;
+    transition: all 0.3s linear;
   }
   .add_product-btn {
-    background-color: var(--white-color);
-    color: var(--primary);
-  }
-  .add_product-btn:hover {
     background-color: var(--hover-color);
     color: var(--white-color);
   }
-
   .checkout_product-btn {
     background-color: var(--hover-color);
     color: var(--white-color);
+  }
+  .add_product-btn:hover {
+    background-color: var(--white-color);
+    color: var(--hover-color);
+  }
+
+  .checkout_product-btn:hover {
+    background-color: var(--white-color);
+    color: var(--hover-color);
   }
 }

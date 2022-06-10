@@ -1,5 +1,11 @@
+@import "../../../Responsive/mixin.scss";
+
 .productForWomen_wrap {
   user-select: none;
+
+  @include responsive_1024 {
+    margin-left: -3px;
+  }
 }
 .productForWomen_name {
   font-size: 3rem;
@@ -20,8 +26,4 @@
 }
 .productForWomen_item {
   margin-bottom: 2rem;
-}
-
-.productForWomen_row {
-  margin-left: 2.8rem;
 }

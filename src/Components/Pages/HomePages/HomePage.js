@@ -22,7 +22,7 @@ function HomePage() {
         <div className="home_page_carousel">
           <Carousels className="carousel" />
         </div>
-        <div className="home_page_container grid wide">
+        <div className="home_page_container grid wide ">
           <NewProduct products={products} />
           <HotProduct products={products} />
           <ProductForMen products={products} />

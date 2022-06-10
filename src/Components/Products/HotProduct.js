@@ -1,6 +1,6 @@
-import "./HotProduct.scss";
 import { ProductCard } from "./ProductCards/ProductCard";
 import { SaleProductCard } from "./ProductCards/SaleProductCard";
+import "./HotProduct.scss";
 
 export function HotProduct(props) {
   const { products } = props;
@@ -25,11 +25,15 @@ export function HotProduct(props) {
             </button>
           ))}
         </div> */}
-        <div className="HotProduct_container ">
-          <div className="HotProduct_item row sm-gutter">
+        <div className="HotProduct_container grid ">
+          <div className="HotProduct_item row ">
             {hotProducts.map((hotProduct, index) =>
               hotProduct.salePrice ? (
-                <div className="col l-3 m-4 c-6 " key={index}>
+                <div
+                  style={{ display: "flex", justifyContent: "center" }}
+                  className="col l-3 m-4 c-6 "
+                  key={index}
+                >
                   <SaleProductCard
                     name={hotProduct.name}
                     URL={hotProduct.URL}
@@ -39,7 +43,11 @@ export function HotProduct(props) {
                   />
                 </div>
               ) : (
-                <div className="col l-3 m-4 c-6 " key={index}>
+                <div
+                  style={{ display: "flex", justifyContent: "center" }}
+                  className="col l-3 m-4 c-6 "
+                  key={index}
+                >
                   <ProductCard
                     name={hotProduct.name}
                     URL={hotProduct.URL}

@@ -2,8 +2,6 @@
   width: 20rem;
   padding: 0.5rem 0 0.5rem 1rem;
   position: relative;
-  top: -4rem;
-  right: -110rem;
   outline: none;
   border: 1px solid #ccc;
   font-size: 1.5rem;
@@ -38,15 +36,16 @@
 }
 .sortProduct_menu {
   position: absolute;
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 4px;
   background-color: #fff;
   width: 20rem;
   z-index: 1;
-  top: 45px;
+  top: 39px;
   right: -1px;
   display: none;
   user-select: none;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
   // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
@@ -77,6 +76,6 @@
   width: 20rem;
   height: 2rem;
   background-color: #fff;
-  top: 38px;
+  top: 39px;
   right: -1px;
 }

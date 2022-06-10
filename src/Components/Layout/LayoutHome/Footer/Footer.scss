@@ -1,5 +1,8 @@
+@import "../../../../Responsive//mixin.scss";
+
 .footer_wrap {
   margin-top: 2rem;
+  display: block;
 }
 .footer_container {
   // padding: 0 1rem;
@@ -15,6 +18,18 @@
       font-weight: 300;
       border-bottom: 1px solid #dfdfdf;
       margin-bottom: 1rem;
+      @include responsive_1024 {
+        font-size: 1.5rem;
+      }
+      @include responsive_992 {
+        font-size: 1.5rem;
+      }
+      @include responsive_768 {
+        font-size: 1.5rem;
+      }
+      @include responsive_425 {
+        font-size: 1.3rem;
+      }
     }
     p {
       color: var(--white-color);
@@ -25,12 +40,43 @@
 
     form {
       display: flex;
+      @include responsive_1200 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      @include responsive_1024 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      @include responsive_992 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      @include responsive_768 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      @include responsive_425 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
 
       .footer_input {
         width: 19.5rem;
         border-radius: 3px;
         border: 1px solid #dfdfdf;
         margin-right: 0.5rem;
+        margin-bottom: 2rem;
         outline: none;
         font-size: 1.4rem;
         padding: 0.5rem 0 0.5rem 0.5rem;
@@ -41,6 +87,7 @@
         background-color: #1c77ff;
         color: var(--white-color);
         padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+
         cursor: pointer;
         transition: all 0.2s linear;
       }
