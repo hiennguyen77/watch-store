@@ -31,24 +31,26 @@ export const SearchPage = (props) => {
 
   return (
     <>
-      <div className="searchPage_wrap" onSubmit={handleSubmitSearch}>
+      <div className="searchPage_wrap grid wide" onSubmit={handleSubmitSearch}>
         <form className="inputSearch_container">
-          <input
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-            className="inputSearch"
-            type="text"
-            placeholder="Tìm kiếm..."
-          />
-          <i className="searchPage_icon">
-            <FiSearch style={inputValue ? { color: "#d60f0f" } : {}} />
-          </i>
+          <div className="inputSearch_input">
+            <input
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              className="inputSearch"
+              type="text"
+              placeholder="Tìm kiếm..."
+            />
+            <i className="searchPage_icon">
+              <FiSearch style={inputValue ? { color: "#d60f0f" } : {}} />
+            </i>
+          </div>
         </form>
-        <div className="grid wide">
-          <div className="row sm-gutter">
+        <div className="productSearch_wrap">
+          <div className="row no-gutters">
             {filterPrs.length > 0 ? (
               currentPr.map((product, index) => (
-                <div className="col l-2-4 m-3 c-12" key={index}>
+                <div className="col l-3 m-4 c-6" key={index}>
                   <ProductCard
                     name={product.name}
                     URL={product.URL}

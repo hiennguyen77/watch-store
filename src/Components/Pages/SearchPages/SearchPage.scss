@@ -1,33 +1,59 @@
+@import "../../../Responsive/mixin.scss";
+
 .searchPage_wrap {
   user-select: none;
 
   margin: 2rem 0;
   .inputSearch_container {
-    position: relative;
-
     display: flex;
-
-    .inputSearch {
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+    .inputSearch_input {
       margin: auto;
+      width: 70%;
+      height: 4rem;
+      position: relative;
+
+      @include responsive_992 {
+        width: 100%;
+      }
+      @include responsive_768 {
+        width: 100%;
+      }
+      @include responsive_425 {
+        width: 100%;
+      }
+      @include responsive_375 {
+        width: 100%;
+      }
+      @include responsive_320 {
+        width: 100%;
+      }
+    }
+    .inputSearch {
       border-radius: 0.2rem;
-      border: 1px solid #999;
-      padding: 0.5rem 1rem;
-      width: 50%;
+      border: none;
+      padding: 0.8rem 1rem;
+      width: 100%;
       outline: none;
+      background-color: #dfdfdf;
     }
     .searchPage_icon {
       position: absolute;
-      top: 0.5rem;
-      right: 35rem;
+      top: 0.8rem;
+      right: 1rem;
       font-size: 2rem;
       color: #999;
     }
   }
 
   .noProduct {
-    margin-left: 40%;
+    width: 100%;
+    // margin-left: 40%;
     margin-top: 10%;
     margin-bottom: 8%;
+    display: flex;
+    justify-content: center;
 
     .noProduct_container {
       text-align: center;

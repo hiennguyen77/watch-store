@@ -30,6 +30,12 @@
       @include responsive_425 {
         font-size: 1.3rem;
       }
+      @include responsive_375 {
+        font-size: 1.1rem;
+      }
+      @include responsive_320 {
+        font-size: 1rem;
+      }
     }
     p {
       color: var(--white-color);
@@ -70,6 +76,18 @@
         align-items: center;
         justify-content: center;
       }
+      @include responsive_375 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      @include responsive_320 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
 
       .footer_input {
         width: 19.5rem;
@@ -80,6 +98,19 @@
         outline: none;
         font-size: 1.4rem;
         padding: 0.5rem 0 0.5rem 0.5rem;
+
+        @include responsive_425 {
+          width: 16.5rem;
+          font-size: 1.3rem;
+        }
+        @include responsive_375 {
+          width: 14rem;
+          font-size: 1.2rem;
+        }
+        @include responsive_320 {
+          width: 11.5rem;
+          font-size: 1rem;
+        }
       }
       button {
         border-radius: 3px;
@@ -110,6 +141,34 @@
       .footer_link:hover {
         color: var(--hover-color);
       }
+    }
+  }
+  .source_wrap {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+  .source {
+    font-size: 1.4rem;
+    color: var(--white-color);
+    font-weight: 200;
+
+    @include responsive_425 {
+      font-size: 1.3rem;
+    }
+    @include responsive_375 {
+      font-size: 1.2rem;
+    }
+    @include responsive_320 {
+      font-size: 1rem;
+    }
+
+    a {
+      color: var(--white-color);
+      font-weight: 200;
+    }
+    a:hover {
+      color: #00ccff;
     }
   }
 }

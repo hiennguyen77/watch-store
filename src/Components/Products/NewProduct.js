@@ -34,7 +34,7 @@ export function NewProduct(props) {
           <div className="new_product_heading">
             <h1 className="heading_name">Sản phẩm mới</h1>
           </div>
-          <div className="row ">
+          <div className=" row no-gutters ">
             {newProducts.map((newProduct, index) =>
               newProduct.salePrice ? (
                 <div

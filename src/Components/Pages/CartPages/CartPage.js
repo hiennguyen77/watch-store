@@ -59,7 +59,7 @@ function CartPage() {
               <div className="cart_btn">
                 <ProductBtn>
                   <Link to="/product">
-                    <button className=" product_btn add_product-btn">
+                    <button className=" product_btn add_product-btn btn_size">
                       <TiArrowBackOutline className="cart_btn_pr" />
                       Tiếp tục mua hàng
                     </button>
@@ -67,7 +67,7 @@ function CartPage() {
                   <Link to="/checkout">
                     <button
                       onClick={() => handleCheckout(totalPrice)}
-                      className=" product_btn checkout_product-btn"
+                      className=" product_btn checkout_product-btn btn_size"
                     >
                       Thanh toán
                     </button>

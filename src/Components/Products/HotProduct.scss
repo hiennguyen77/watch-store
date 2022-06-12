@@ -1,26 +1,30 @@
 @import "../../Responsive/mixin.scss";
 .HotProduct_wrap {
-  margin-left: 3.5rem;
   user-select: none;
-  @include responsive_1200 {
-    margin-left: 0;
-  }
-  @include responsive_1024 {
-    margin-left: -2px;
-  }
+}
+
+.hotProduct_body {
+  margin: 1.1rem 0;
+
   @include responsive_992 {
-    margin-left: 0;
+    margin: 0.8rem 0;
   }
   @include responsive_768 {
-    margin-left: 0;
+    margin: 0.8rem 0;
   }
   @include responsive_425 {
-    margin-left: 0;
+    margin: 0.4rem 0;
+  }
+  @include responsive_375 {
+    margin: 0.4rem 0;
+  }
+  @include responsive_320 {
+    margin: 0.4rem 0;
   }
 }
 
 .HotProduct_item {
-  margin-right: 2rem;
+  // margin-right: 2rem;
 }
 .HotProduct_name {
   font-size: 3rem;

@@ -33,12 +33,12 @@ export function ProductForWomen(props) {
             </div>
           </div>
 
-          <div className="row productForWomen_row ">
+          <div className="row productForWomen_row no-gutters ">
             {womenProduct.map((productForWomen, index) =>
               productForWomen.salePrice ? (
                 <div
                   style={{ display: "flex", justifyContent: "center" }}
-                  className="col l-3 m-4 c-6 "
+                  className="productWomen_body col l-3 m-4 c-6 "
                   key={index}
                 >
                   <SaleProductCard
@@ -52,7 +52,7 @@ export function ProductForWomen(props) {
               ) : (
                 <div
                   style={{ display: "flex", justifyContent: "center" }}
-                  className="col l-3 m-4 c-6 "
+                  className="productWomen_body col l-3 m-4 c-6 "
                   key={index}
                 >
                   <ProductCard

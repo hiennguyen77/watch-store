@@ -1,9 +1,13 @@
 @import "../../../../Responsive/mixin.scss";
 .blogComp_wrap {
   user-select: none;
+  height: 100%;
+  width: 100%;
 }
 .blogComp_container {
   margin-bottom: 4rem;
+
+  height: 100%;
 }
 
 .blogComp_content:hover {
@@ -20,14 +24,8 @@
 .blogComp_content {
   // border: 1px solid #333;
   border-radius: 5px;
-  width: 280px;
+  width: 100%;
   height: 100%;
-  @include responsive_768 {
-    width: 250px;
-  }
-  @include responsive_425 {
-    width: 210px;
-  }
 }
 .blogComp_img {
   object-fit: cover;
@@ -53,4 +51,9 @@ span {
 p {
   font-size: 1.5rem;
   line-height: 1.2;
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }

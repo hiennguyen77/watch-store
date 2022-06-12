@@ -25,7 +25,7 @@ export const ProductDetail = (props) => {
 
       <div className="productsDetail_wrap">
         <div className="productsDetail_container grid wide">
-          <div className="productDetail_pr row sm-gutter">
+          <div className="productDetail_pr row ">
             <div className="productDetail_left col l-6">
               <img src={productDetail.URL} alt="watch-img" />
             </div>
@@ -39,18 +39,20 @@ export const ProductDetail = (props) => {
                     setAmount={setAmountDetail}
                   />
                 </div>
-                <ProductBtn>
-                  <Link to="/cart">
-                    <button
-                      onClick={() =>
-                        handleAddProductToCart(productDetail, amountDetail)
-                      }
-                      className=" product_btn add_product-btn detail_btn"
-                    >
-                      Thêm giỏ hàng
-                    </button>
-                  </Link>
-                </ProductBtn>
+                <div className="productDetail_btn">
+                  <ProductBtn>
+                    <Link to="/cart">
+                      <button
+                        onClick={() =>
+                          handleAddProductToCart(productDetail, amountDetail)
+                        }
+                        className=" product_btn add_product-btn detail_btn"
+                      >
+                        Thêm giỏ hàng
+                      </button>
+                    </Link>
+                  </ProductBtn>
+                </div>
 
                 <div className="productDetail_describe">
                   <h3>Mô tả</h3>

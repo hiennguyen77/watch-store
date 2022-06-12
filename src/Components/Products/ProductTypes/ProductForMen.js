@@ -18,7 +18,7 @@ export function ProductForMen(props) {
           <h1 className="productForMen_name">Đồng hồ nam</h1>
         </div>
         <div className="productForMen_container grid ">
-          <div className="productForMen_item row sm-gutter no-gutters">
+          <div className="productForMen_item row ">
             <div className="col l-12 m-12 c-12 ">
               <Link to="">
                 <div className="productForMen_img_container">
@@ -31,12 +31,12 @@ export function ProductForMen(props) {
               </Link>
             </div>
           </div>
-          <div className="productForMen_row row   ">
+          <div className="productForMen_row row no-gutters   ">
             {menProduct.map((productForMen, index) =>
               productForMen.salePrice ? (
                 <div
                   style={{ display: "flex", justifyContent: "center" }}
-                  className="col l-3 m-4 c-6 "
+                  className="productMen_body col l-3 m-4 c-6 "
                   key={index}
                 >
                   <SaleProductCard
@@ -50,7 +50,7 @@ export function ProductForMen(props) {
               ) : (
                 <div
                   style={{ display: "flex", justifyContent: "center" }}
-                  className="col l-3 m-4 c-6 "
+                  className="productMen_body col l-3 m-4 c-6 "
                   key={index}
                 >
                   <ProductCard

@@ -24,7 +24,7 @@ function Header(props) {
             : "header_wrap headerDefault"
         }
       >
-        <div className="header_container ">
+        <div className="header_container  ">
           <div className="header_content_top">
             <div className="social_icon">
               <p>Theo dõi:</p>

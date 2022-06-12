@@ -1,22 +1,24 @@
 @import "../../../Responsive/mixin.scss";
 .productAccessories_wrap {
-  margin-left: 4.8rem;
-
   user-select: none;
-  @include responsive_1200 {
-    margin-left: 60px;
-  }
-  @include responsive_1024 {
-    margin-left: 1rem;
-  }
+}
+
+.accessory_body {
+  margin: 1.1rem 0rem;
   @include responsive_992 {
-    margin-left: 1.8rem;
+    margin: 0.8rem 0;
   }
   @include responsive_768 {
-    margin-left: 1.8rem;
+    margin: 0.8rem 0;
   }
   @include responsive_425 {
-    margin-left: 0rem;
+    margin: 0.4rem 0;
+  }
+  @include responsive_375 {
+    margin: 0.4rem 0;
+  }
+  @include responsive_320 {
+    margin: 0.4rem 0;
   }
 }
 

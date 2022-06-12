@@ -9,8 +9,7 @@ import { PaginationPr } from "../../Pagination/Pagination";
 import { useContext, useState } from "react";
 import { Loading } from "../../Loading/Loading";
 import { productContext } from "../../../Contexts/ProductContext";
-import { BsChevronDown } from "react-icons/bs";
-
+import { FilterSelectBtn } from "./SideBar/Filters/FilterSelectBtn";
 function ProductPage() {
   const {
     loading,
@@ -25,7 +24,6 @@ function ProductPage() {
   } = useContext(productContext);
 
   const [sortValue, setSortValue] = useState();
-  const [openFilter, setOpenFilter] = useState(false);
 
   //Pagination-Product.
   const indexOfLastPr = currentPage * productPerPage;
@@ -48,33 +46,12 @@ function ProductPage() {
             setTypeName={setTypeName}
           />
         </div>
+        <div className="filter_btn">
+          <FilterSelectBtn />
+        </div>
         <div className="productPage_container">
           <div className="productPage_body">
-            <div
-              onClick={() => setOpenFilter(!openFilter)}
-              className="filter_btn"
-            >
-              <p>
-                -- Bộ lọc sản phẩm --
-                <BsChevronDown className="filter_btn_icon" />
-              </p>
-            </div>
-            {openFilter && (
-              <div className=" filter_Product">
-                <FilterBrand
-                  allProducts={products}
-                  setFilterProducts={setFilterProducts}
-                  setTypeName={setTypeName}
-                />
-
-                <FilterPrice
-                  allProducts={products}
-                  setFilterProducts={setFilterProducts}
-                  setTypeName={setTypeName}
-                />
-              </div>
-            )}
-            <div className=" filter_Product_medium">
+            <div className=" filter_Product">
               <FilterBrand
                 allProducts={products}
                 setFilterProducts={setFilterProducts}
@@ -88,8 +65,8 @@ function ProductPage() {
               />
             </div>
 
-            <div className="productPage_product grid ">
-              <div className="productPage_row row sm-gutter ">
+            <div className="productPage_product grid wide ">
+              <div className="productPage_row row no-gutters ">
                 {currentPr.map((product, index) =>
                   product.salePrice ? (
                     <div

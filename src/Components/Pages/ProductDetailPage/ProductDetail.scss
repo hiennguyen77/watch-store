@@ -1,3 +1,4 @@
+@import "../../../Responsive/mixin.scss";
 .productsDetail_wrap {
   user-select: none;
 
@@ -35,8 +36,24 @@
             font-size: 4rem;
           }
 
+          .productDetail_btn {
+            @include responsive_1024 {
+              margin-right: 4rem;
+            }
+            @include responsive_425 {
+              margin-right: 10rem;
+            }
+            @include responsive_375 {
+              margin-right: 10rem;
+            }
+            @include responsive_320 {
+              margin-right: 10rem;
+            }
+          }
+
           .productDetail_describe {
             margin-top: 6rem;
+
             h3 {
               font-size: 3rem;
             }
@@ -50,6 +67,18 @@
             }
           }
         }
+      }
+    }
+
+    .productDetail_more {
+      @include responsive_425 {
+        padding-left: 2rem;
+      }
+      @include responsive_375 {
+        padding-left: 2rem;
+      }
+      @include responsive_320 {
+        padding-left: 2rem;
       }
     }
 

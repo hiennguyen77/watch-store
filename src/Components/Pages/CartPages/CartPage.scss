@@ -1,3 +1,4 @@
+@import "../../../Responsive/mixin.scss";
 .cartPage_wrap {
   user-select: none;
   .cartPage_container {
@@ -9,11 +10,14 @@
         font-size: 4.5rem;
         font-weight: 400;
         color: var(--primary);
+        @include responsive_320 {
+          font-size: 3rem;
+        }
       }
       p {
         font-size: 1.6rem;
         color: var(--primary);
-        line-height: 0.3;
+        line-height: 1.3;
       }
       // .cartPage_line {
       //   width: 17rem;
@@ -52,6 +56,21 @@
       .cart_price_delete {
         display: flex;
         align-items: center;
+
+        @include responsive_425 {
+          display: flex;
+          flex-direction: column;
+        }
+        @include responsive_375 {
+          display: flex;
+          flex-direction: column;
+        }
+        @include responsive_320 {
+          position: relative;
+          top: 69px;
+          left: -142px;
+        }
+
         p {
           font-size: 1.6rem;
           font-weight: 400;
@@ -87,8 +106,41 @@
     }
 
     .cart_btn {
-      margin-left: 68.4rem;
+      display: flex;
+      justify-content: center;
       margin-bottom: 6rem;
+
+      @include responsive_425 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .btn_size {
+          width: 100%;
+          border-radius: 0;
+          margin: 0.5rem 0;
+        }
+      }
+      @include responsive_375 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .btn_size {
+          width: 100%;
+          border-radius: 0;
+          margin: 0.5rem 0;
+        }
+      }
+      @include responsive_320 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .btn_size {
+          width: 100%;
+          border-radius: 0;
+          margin: 0.5rem 0;
+        }
+      }
+
       .cart_btn_pr {
         margin-right: 1rem;
       }

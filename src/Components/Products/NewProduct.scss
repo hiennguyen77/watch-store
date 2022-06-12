@@ -2,22 +2,24 @@
 
 .new_product_wrap {
   user-select: none;
-
-  @include responsive_1200 {
-    .new_product_container {
-      margin-left: 0;
-    }
-  }
-  @include responsive_1024 {
-    margin-left: 0;
-    .new_product_container {
-      margin-left: 5px;
-    }
-  }
 }
+
 .new_product_body {
+  margin: 1.1rem 0;
   @include responsive_992 {
-    padding-left: 0;
+    margin: 0.8rem 0;
+  }
+  @include responsive_768 {
+    margin: 0.8rem 0;
+  }
+  @include responsive_425 {
+    margin: 0.4rem 0;
+  }
+  @include responsive_375 {
+    margin: 0.4rem 0;
+  }
+  @include responsive_320 {
+    margin: 0.4rem 0;
   }
 }
 

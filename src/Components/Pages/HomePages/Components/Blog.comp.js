@@ -9,7 +9,7 @@ export const BlogComponent = () => {
           <h1 className="blogComp_name">Bài viết mới nhất</h1>
         </div>
 
-        <div class="blogComp_container row sm-gutter no-gutters">
+        <div class="blogComp_container row ">
           <div
             style={{ display: "flex", justifyContent: "center" }}
             className="col l-4 m-4 c-6"

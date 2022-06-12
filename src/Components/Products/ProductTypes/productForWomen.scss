@@ -2,9 +2,24 @@
 
 .productForWomen_wrap {
   user-select: none;
+}
 
-  @include responsive_1024 {
-    margin-left: -3px;
+.productWomen_body {
+  margin: 1.1rem 0rem;
+  @include responsive_992 {
+    margin: 0.8rem 0;
+  }
+  @include responsive_768 {
+    margin: 0.8rem 0;
+  }
+  @include responsive_425 {
+    margin: 0.4rem 0;
+  }
+  @include responsive_375 {
+    margin: 0.4rem 0;
+  }
+  @include responsive_320 {
+    margin: 0.4rem 0;
   }
 }
 .productForWomen_name {
@@ -18,10 +33,43 @@
   width: 99.8%;
   height: 400px;
 
+  display: inline-block;
+  @include responsive_992 {
+    height: 270px;
+  }
+  @include responsive_768 {
+    height: 270px;
+  }
+  @include responsive_425 {
+    height: 270px;
+  }
+  @include responsive_375 {
+    height: 177px;
+  }
+  @include responsive_320 {
+    height: 175px;
+  }
+
   .productForWomen_img {
     object-fit: cover;
     width: 100%;
     height: 100%;
+
+    @include responsive_992 {
+      object-fit: cover;
+    }
+    @include responsive_768 {
+      object-fit: cover;
+    }
+    @include responsive_425 {
+      object-fit: cover;
+    }
+    @include responsive_375 {
+      object-fit: cover;
+    }
+    @include responsive_320 {
+      object-fit: cover;
+    }
   }
 }
 .productForWomen_item {

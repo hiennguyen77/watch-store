@@ -2,9 +2,6 @@ import "./ProductAccessories.scss";
 import { ProductCard } from "../ProductCards/ProductCard";
 import { SaleProductCard } from "../ProductCards/SaleProductCard";
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
 import { memo } from "react";
 // import axios from "axios";
 
@@ -15,36 +12,6 @@ function ProductAccessories(props) {
     return product.item === "accessory";
   });
 
-  var settings = {
-    dots: false,
-    infinite: true,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    arrows: false,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    pauseOnHover: true,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 3,
-          autoplay: false,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 2,
-          autoplay: false,
-          // arrows: true,
-          dots: true,
-        },
-      },
-    ],
-  };
-
   return (
     <>
       <div className="productAccessories_wrap">
@@ -52,31 +19,39 @@ function ProductAccessories(props) {
           <h1 className="productAccessories_name">Phụ kiện đồng hồ</h1>
         </div>
         <div className="productAccessories_container grid ">
-          <div className="productAccessories_item row ">
-            <div className="col l-12 m-12 c-12">
-              <Slider {...settings}>
-                {accessoryPr.map((productAccessories, index) =>
-                  productAccessories.salePrice ? (
-                    <SaleProductCard
-                      key={index}
-                      name={productAccessories.name}
-                      URL={productAccessories.URL}
-                      price={productAccessories.price}
-                      salePrice={productAccessories.salePrice}
-                      productId={productAccessories.id}
-                    />
-                  ) : (
-                    <ProductCard
-                      key={index}
-                      name={productAccessories.name}
-                      URL={productAccessories.URL}
-                      price={productAccessories.price}
-                      productId={productAccessories.id}
-                    />
-                  )
-                )}
-              </Slider>
-            </div>
+          <div className="productAccessories_item row no-gutters ">
+            {accessoryPr.map((productAccessories, index) =>
+              productAccessories.salePrice ? (
+                <div
+                  style={{ display: "flex", justifyContent: "center" }}
+                  key={index}
+                  className="accessory_body col l-3 m-4 c-6"
+                >
+                  <SaleProductCard
+                    key={index}
+                    name={productAccessories.name}
+                    URL={productAccessories.URL}
+                    price={productAccessories.price}
+                    salePrice={productAccessories.salePrice}
+                    productId={productAccessories.id}
+                  />
+                </div>
+              ) : (
+                <div
+                  style={{ display: "flex", justifyContent: "center" }}
+                  key={index}
+                  className="accessory_body col l-3 m-4 c-6"
+                >
+                  <ProductCard
+                    key={index}
+                    name={productAccessories.name}
+                    URL={productAccessories.URL}
+                    price={productAccessories.price}
+                    productId={productAccessories.id}
+                  />
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>

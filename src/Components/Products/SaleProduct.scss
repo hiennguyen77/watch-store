@@ -1,3 +1,4 @@
+@import "../../Responsive/mixin.scss";
 .home_page_prSale {
   margin-top: 4rem;
   user-select: none;
@@ -17,6 +18,22 @@
   object-fit: cover;
   height: 300px;
   width: 100%;
+  @include responsive_992 {
+    object-fit: contain;
+  }
+  @include responsive_768 {
+    object-fit: contain;
+  }
+
+  @include responsive_425 {
+    object-fit: cover;
+  }
+  @include responsive_375 {
+    object-fit: cover;
+  }
+  @include responsive_320 {
+    object-fit: cover;
+  }
 }
 .sale_content {
   display: inline-block;

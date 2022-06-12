@@ -1,3 +1,4 @@
+@import "../../../../../Responsive/mixin.scss";
 .sortProduct_wrap {
   width: 20rem;
   padding: 0.5rem 0 0.5rem 1rem;
@@ -11,15 +12,52 @@
   cursor: pointer;
   user-select: none;
 
+  @include responsive_425 {
+    width: 100%;
+    border: none;
+    background-color: #dfdfdf;
+    border-radius: 0;
+  }
+  @include responsive_375 {
+    width: 100%;
+    border: none;
+    background-color: #dfdfdf;
+    border-radius: 0;
+  }
+  @include responsive_320 {
+    width: 100%;
+    border: none;
+    background-color: #dfdfdf;
+    border-radius: 0;
+  }
+
   .sort_container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include responsive_425 {
+      justify-content: center;
+    }
+    @include responsive_375 {
+      justify-content: center;
+    }
+    @include responsive_320 {
+      justify-content: center;
+    }
 
     .sortproduct_screen {
       p {
         padding: 0;
         font-size: 1.6rem;
+        @include responsive_425 {
+          margin-right: 7.5rem;
+        }
+        @include responsive_375 {
+          margin-right: 7.5rem;
+        }
+        @include responsive_320 {
+          margin-right: 7.5rem;
+        }
       }
     }
     .sortProduct_icon {
@@ -47,7 +85,24 @@
   user-select: none;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
-  // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  @include responsive_425 {
+    background-color: #f3f0f0;
+    width: 100%;
+    top: 39px;
+    transition: all 0.5s ease-in-out;
+  }
+  @include responsive_375 {
+    background-color: #f3f0f0;
+    width: 100%;
+    top: 39px;
+    transition: all 0.5s ease-in-out;
+  }
+  @include responsive_320 {
+    background-color: #f3f0f0;
+    width: 100%;
+    top: 39px;
+    transition: all 0.5s ease-in-out;
+  }
 
   .sorProduct_list {
     margin: 0;
@@ -70,12 +125,12 @@
   }
 }
 
-.sortProduct_wrap::after {
-  content: "";
-  position: absolute;
-  width: 20rem;
-  height: 2rem;
-  background-color: #fff;
-  top: 39px;
-  right: -1px;
-}
+// .sortProduct_wrap::after {
+//   content: "";
+//   position: absolute;
+//   width: 20rem;
+//   height: 2rem;
+//   background-color: #fff;
+//   top: 39px;
+//   right: -1px;
+// }

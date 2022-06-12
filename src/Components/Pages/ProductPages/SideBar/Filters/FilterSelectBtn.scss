@@ -1,0 +1,28 @@
+.filterBtn {
+  margin: 0.5rem 0;
+  .filterBtn_name {
+    padding: 7px 0;
+    background-color: #dfdfdf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      margin-right: 3rem;
+    }
+  }
+
+  .filterBtn_menu {
+    padding: 1rem 3rem;
+    background-color: #f3f0f0;
+    display: none;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .filterBtn_menu.filterBtn_menu_block {
+    display: block;
+  }
+}
+.filterBtn:hover .filterBtn_menu {
+  display: block;
+}

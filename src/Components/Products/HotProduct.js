@@ -26,12 +26,12 @@ export function HotProduct(props) {
           ))}
         </div> */}
         <div className="HotProduct_container grid ">
-          <div className="HotProduct_item row ">
+          <div className="HotProduct_item row no-gutters ">
             {hotProducts.map((hotProduct, index) =>
               hotProduct.salePrice ? (
                 <div
                   style={{ display: "flex", justifyContent: "center" }}
-                  className="col l-3 m-4 c-6 "
+                  className=" hotProduct_body col l-3 m-4 c-6 "
                   key={index}
                 >
                   <SaleProductCard
@@ -45,7 +45,7 @@ export function HotProduct(props) {
               ) : (
                 <div
                   style={{ display: "flex", justifyContent: "center" }}
-                  className="col l-3 m-4 c-6 "
+                  className=" hotProduct_body col l-3 m-4 c-6 "
                   key={index}
                 >
                   <ProductCard

@@ -129,6 +129,12 @@ function Footer() {
               </div>
             </div>
           </div>
+          <div className="source_wrap">
+            <p class="source">
+              Copyright © 2022 WatchStore - Nguyen Chi Hien. Power by{" "}
+              <a href="https://template-claten.mysapo.net/">Claten</a>.
+            </p>
+          </div>
         </div>
       </div>
     </>
