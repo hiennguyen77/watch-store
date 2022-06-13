@@ -39,7 +39,7 @@ export const HeaderSearch = () => {
             value={searchText}
             style={inputStyle}
             type="text"
-            name="search"
+            // name="search"
             placeholder="Tìm kiếm..."
           />
         </form>

@@ -4,6 +4,7 @@
 import "./NewProduct.scss";
 import { ProductCard } from "./ProductCards/ProductCard";
 import { SaleProductCard } from "./ProductCards/SaleProductCard";
+
 export function NewProduct(props) {
   const { products } = props;
   const newProducts = products.slice(0, 5);
@@ -35,6 +36,8 @@ export function NewProduct(props) {
             <h1 className="heading_name">Sản phẩm mới</h1>
           </div>
           <div className=" row no-gutters ">
+            
+
             {newProducts.map((newProduct, index) =>
               newProduct.salePrice ? (
                 <div

@@ -19,6 +19,7 @@ const ProductContextProvider = ({ children }) => {
         const res = await axios.get(
           `https://6273e9663d2b5100742474a5.mockapi.io/products`
         );
+
         setProducts(res.data);
         setFilterProducts(res.data);
         setLoading(false);

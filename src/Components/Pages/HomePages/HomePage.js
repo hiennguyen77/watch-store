@@ -18,6 +18,7 @@ function HomePage() {
   return (
     <>
       {loading && <Loading />}
+
       <div className="home_page_wrap">
         <div className="home_page_carousel">
           <Carousels className="carousel" />
