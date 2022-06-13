@@ -1,3 +1,4 @@
+@import "../../../Responsive/mixin.scss";
 .login_wrap {
   display: flex;
   flex-direction: column;
@@ -11,6 +12,16 @@
   form {
     width: 50rem;
     margin: 3rem 0 8rem 0;
+
+    @include responsive_425 {
+      width: 42rem;
+    }
+    @include responsive_375 {
+      width: 38rem;
+    }
+    @include responsive_320 {
+      width: 32rem;
+    }
 
     padding: 0 1rem;
     input {

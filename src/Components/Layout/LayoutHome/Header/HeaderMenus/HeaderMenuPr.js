@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { productContext } from "../../../../../Contexts/ProductContext";
 
-const productTypes = [
+export const productTypes = [
   // { typeName: "Tất cả", type: "products" },
   { typeName: "Đồng hồ nam", type: "productForMens", item: "male" },
   { typeName: "Đồng hồ nữ", type: "productWomens", item: "female" },

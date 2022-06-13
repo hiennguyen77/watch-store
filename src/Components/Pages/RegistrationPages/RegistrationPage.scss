@@ -1,3 +1,5 @@
+@import "../../../Responsive/mixin.scss";
+
 .registration_wrap {
   display: flex;
   flex-direction: column;
@@ -8,15 +10,25 @@
   .register_heading {
     font-size: 4rem;
     font-weight: 400;
+    margin-bottom: 6rem;
   }
 
   form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     width: 50rem;
-    margin: 3rem 0 1rem 0;
+    margin: auto;
+
+    @include responsive_425 {
+      width: 42rem;
+    }
+    @include responsive_375 {
+      width: 37rem;
+    }
+    @include responsive_320 {
+      width: 31rem;
+    }
 
     input {
       width: 100%;
@@ -52,6 +64,7 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 6rem;
+    margin-top: 3rem;
 
     p {
       color: var(--primary);

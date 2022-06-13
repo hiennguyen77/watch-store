@@ -1,7 +1,7 @@
 import "./HeaderMenuBrand.scss";
 import { Link } from "react-router-dom";
 
-const brands = [
+export const brands = [
   { brandName: "Tag Heuer", brandId: "brand_1", brandURL: "" },
   { brandName: "Omega", brandId: "brand_2", brandURL: "" },
   { brandName: "Longines", brandId: "brand_3", brandURL: "" },
@@ -15,7 +15,7 @@ export function HeaderMenuBrand(props) {
   return (
     <>
       <div
-        class={
+        className={
           menuScroll
             ? "menuBrand_wrap menuBrandScroll"
             : "menuBrand_wrap menuBrandDefault"

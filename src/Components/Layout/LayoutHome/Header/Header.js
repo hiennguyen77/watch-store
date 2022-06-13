@@ -10,15 +10,17 @@ import { HeaderMenuPr } from "./HeaderMenus/HeaderMenuPr";
 import { HeaderMenuBrand } from "./HeaderMenus/HeaderMenuBrand";
 import "./Header.scss";
 import { cartContext } from "../../../../Contexts/CartContext";
-import { useContext } from "react";
-// import { MenuSidebar } from "./MenuSidebar/MenuSidebar";
+import { useState, useContext } from "react";
+import { MenuSidebar } from "./MenuSidebar/MenuSidebar";
+import { HeaderSearch } from "./HeaderSearch/HeaderSearch";
 function Header(props) {
+  const [openMenuBar, setOpenMenuBar] = useState(false);
   const { amount } = useContext(cartContext);
   const { headerScroll } = props;
   return (
     <>
       <div
-        class={
+        className={
           headerScroll
             ? "header_wrap headerScroll "
             : "header_wrap headerDefault"
@@ -101,14 +103,24 @@ function Header(props) {
                   <p className="circle">({amount})</p>
                 </div>
 
-                <div className="navigation_menu">
-                  <i className="menu_icon">
+                <div title="Tùy chọn" className="navigation_menu">
+                  <i
+                    onClick={() => setOpenMenuBar(!openMenuBar)}
+                    className="menu_icon"
+                  >
                     <FiMenu />
                   </i>
 
-                  {/* <MenuSidebar /> */}
+                  <MenuSidebar
+                    openMenuBar={openMenuBar}
+                    setOpenMenuBar={setOpenMenuBar}
+                  />
                 </div>
               </div>
+            </div>
+
+            <div className="header_search_input">
+              <HeaderSearch />
             </div>
 
             <div className="header_navigation_wrap">

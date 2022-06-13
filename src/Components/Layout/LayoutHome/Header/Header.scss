@@ -126,6 +126,23 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 1rem 0;
+
+    .header_search_input {
+      display: none;
+
+      @include responsive_768 {
+        display: block;
+      }
+      @include responsive_425 {
+        display: block;
+      }
+      @include responsive_375 {
+        display: block;
+      }
+      @include responsive_320 {
+        display: block;
+      }
+    }
     .header_logo_cart {
       display: flex;
       align-items: center;
@@ -291,6 +308,7 @@
           margin-top: 1rem;
           margin-left: 2rem;
           display: none;
+          cursor: pointer;
           .menu_icon {
             color: var(--white-color);
             font-size: 3rem;
@@ -439,6 +457,10 @@
 
     height: 5rem;
 
+    .header_search_input {
+      display: none;
+    }
+
     .header_logo_cart {
       display: flex;
       justify-content: space-between;
@@ -562,6 +584,7 @@
           margin-top: 1rem;
           margin-left: 2rem;
           display: none;
+          cursor: pointer;
 
           .menu_icon {
             color: var(--white-color);

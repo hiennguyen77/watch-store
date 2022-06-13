@@ -1,0 +1,18 @@
+@import "../../../../../Responsive/mixin.scss";
+
+.headerSearch_wrap {
+  input {
+    @include responsive_768 {
+      width: 70%;
+    }
+    @include responsive_425 {
+      width: 80%;
+    }
+    @include responsive_375 {
+      width: 100%;
+    }
+    @include responsive_320 {
+      width: 100%;
+    }
+  }
+}

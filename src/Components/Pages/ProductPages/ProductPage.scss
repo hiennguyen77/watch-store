@@ -75,7 +75,7 @@
   // margin-right: 3rem;
   // margin-left: 38rem;
   @include responsive_768 {
-    top: 21rem;
+    top: 24rem;
   }
   @include responsive_425 {
     position: initial;
@@ -118,6 +118,7 @@
 
 .filter_btn {
   display: none;
+
   @include responsive_425 {
     display: block;
   }

@@ -9,12 +9,12 @@ export const BlogComponent = () => {
           <h1 className="blogComp_name">Bài viết mới nhất</h1>
         </div>
 
-        <div class="blogComp_container row ">
+        <div className="blogComp_container row ">
           <div
             style={{ display: "flex", justifyContent: "center" }}
             className="col l-4 m-4 c-6"
           >
-            <div class="blogComp_content">
+            <div className="blogComp_content">
               <Link className="blogComp_link" to="/blog">
                 <img
                   className="blogComp_img"
@@ -36,7 +36,7 @@ export const BlogComponent = () => {
             style={{ display: "flex", justifyContent: "center" }}
             className="col l-4 m-4 c-6"
           >
-            <div class="blogComp_content">
+            <div className="blogComp_content">
               <Link className="blogComp_link" to="/blog">
                 <img
                   className="blogComp_img"
@@ -58,7 +58,7 @@ export const BlogComponent = () => {
             style={{ display: "flex", justifyContent: "center" }}
             className="col l-4 m-4 c-6"
           >
-            <div class="blogComp_content">
+            <div className="blogComp_content">
               <Link className="blogComp_link" to="/blog">
                 <img
                   className="blogComp_img"
