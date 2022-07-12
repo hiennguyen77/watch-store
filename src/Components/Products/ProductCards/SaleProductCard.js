@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { cartContext } from "../../../Contexts/CartContext";
+import { formatVnd } from "../../../helper";
 
 export const SaleProductCard = (props) => {
   const { setProductDetail } = useContext(cartContext);
@@ -21,8 +22,8 @@ export const SaleProductCard = (props) => {
               {name}
             </h6>
             <div style={{ display: "flex", alignItems: "center" }}>
-              <h4>{salePrice}đ</h4>
-              <p>{price}đ</p>
+              <h4>{formatVnd(salePrice)}</h4>
+              <p>{formatVnd(price)}đ</p>
             </div>
           </div>
         </div>

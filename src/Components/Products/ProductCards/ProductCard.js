@@ -1,6 +1,7 @@
 import "./ProductCard.scss";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
+import { formatVnd } from "../../../helper";
 import { cartContext } from "../../../Contexts/CartContext";
 import { productContext } from "../../../Contexts/ProductContext";
 
@@ -29,7 +30,7 @@ export const ProductCard = (props) => {
             <h6 title={name} className="product_card_name">
               {name}
             </h6>
-            <h4>{price}đ</h4>
+            <h4>{formatVnd(price)}</h4>
           </div>
         </div>
       </div>

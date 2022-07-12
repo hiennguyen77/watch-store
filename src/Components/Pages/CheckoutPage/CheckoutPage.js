@@ -11,6 +11,8 @@ import {
   MdOutlineKeyboardArrowRight,
 } from "react-icons/md";
 
+import { formatVnd } from "../../../helper";
+
 export const CheckoutPage = (props) => {
   const { cartProducts, totalPrice, setCartProducts } = useContext(cartContext);
   return (
@@ -58,13 +60,13 @@ export const CheckoutPage = (props) => {
                       <p>Số lượng: {product.amount}</p>
                     </div>
                   </div>
-                  <h4>{product.price}đ</h4>
+                  <h4>{formatVnd(product.price)}</h4>
                 </div>
               ))}
               {cartProducts.length > 0 ? (
                 <div className="total_price">
                   <p>Tổng tiền: </p>
-                  <h4>{totalPrice}đ </h4>
+                  <h4>{formatVnd(totalPrice)} </h4>
                 </div>
               ) : (
                 ""

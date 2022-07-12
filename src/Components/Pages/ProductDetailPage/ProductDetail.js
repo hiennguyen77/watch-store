@@ -11,6 +11,7 @@ import { useContext, useState } from "react";
 
 import { cartContext } from "../../../Contexts/CartContext";
 import { productContext } from "../../../Contexts/ProductContext";
+import { formatVnd } from "../../../helper";
 
 export const ProductDetail = (props) => {
   const [amountDetail, setAmountDetail] = useState(1);
@@ -32,7 +33,7 @@ export const ProductDetail = (props) => {
             <div className="productDetail_right col l-6">
               <div className="productDetail_right-contain">
                 <h1>{productDetail.name}</h1>
-                <h2>{productDetail.price}đ</h2>
+                <h2>{formatVnd(productDetail.price)}</h2>
                 <div>
                   <AmountCounter
                     amount={amountDetail}

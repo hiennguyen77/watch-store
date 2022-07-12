@@ -6,6 +6,7 @@ import { AmountCounter } from "../ProductDetailPage/AmountCounter";
 import { ProductBtn } from "../../ProductBtn/ProductBtn";
 import { Link } from "react-router-dom";
 import { TiArrowBackOutline } from "react-icons/ti";
+import { formatVnd } from "../../../helper";
 
 function CartPage() {
   const { cartProducts, amount, setAmount, handleDeleteCart, handleCheckout } =
@@ -42,7 +43,7 @@ function CartPage() {
                 </div>
               </div>
               <div className="cart_price_delete">
-                <p>{cartProduct.price}đ</p>
+                <p>{formatVnd(cartProduct.price)}</p>
                 <button onClick={() => handleDeleteCart(index)}>
                   <i>xóa</i>
                 </button>
@@ -54,7 +55,7 @@ function CartPage() {
             <div>
               <div className="totalPrice">
                 <p>Tổng tiền:</p>
-                <h4>{totalPrice}đ</h4>
+                <h4>{formatVnd(totalPrice)}</h4>
               </div>
               <div className="cart_btn">
                 <ProductBtn>
