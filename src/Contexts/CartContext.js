@@ -8,6 +8,7 @@ const CartContextProvider = ({ children }) => {
   const [productDetail, setProductDetail] = useState([]);
   const [cartProducts, setCartProducts] = useState([]);
   const [totalPrice, setTotalPrice] = useState();
+  console.log(productDetail);
 
   const handleAddProductToCart = (cartProduct, amountDetail) => {
     const foundIndex = cartProducts.findIndex(

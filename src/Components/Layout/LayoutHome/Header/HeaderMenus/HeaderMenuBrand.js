@@ -25,7 +25,7 @@ export function HeaderMenuBrand(props) {
           <ul className="menuBrand_list">
             {brands.map((brand) => (
               <li className="menuBrand_item " key={brand.brandId}>
-                <Link className="menuBrand_link" to="/product">
+                <Link className="menuBrand_link" to="/brand/brandId">
                   <h6>{brand.brandName}</h6>
                 </Link>
               </li>

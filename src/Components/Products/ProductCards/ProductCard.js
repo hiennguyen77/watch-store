@@ -3,23 +3,18 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { formatVnd } from "../../../helper";
 import { cartContext } from "../../../Contexts/CartContext";
-import { productContext } from "../../../Contexts/ProductContext";
 
 export const ProductCard = (props) => {
   const { name, URL, price, productId } = props;
   const { setProductDetail } = useContext(cartContext);
-  const { setLoading } = useContext(productContext);
 
+  console.log(price);
   return (
     <>
       <div
         className="product_card_wrap"
         onClick={() => {
-          setLoading(true);
-          setTimeout(() => {
-            setProductDetail({ name, URL, price, productId });
-            setLoading(false);
-          }, 500);
+          setProductDetail({ name, URL, price, productId });
         }}
       >
         <div className="product_card_container">
